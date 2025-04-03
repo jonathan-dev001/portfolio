@@ -70,17 +70,15 @@ $('.send_me').on('click', function (e) {
         $('#message').css("border", "2px solid red");
     }
 
+    
     if (isValid) {
-        if (isValid) {
-            $('form')[0].reset(); // <-- Vider tous les champs du formulaire
-        
-            $('.contact_form').removeClass('open_form');
-            $('.thanks').fadeIn(300).delay(1500).fadeOut(300);
-            $('.send_me').fadeOut(300);
-            $('.contact_me').fadeIn(300);
-            $('.top_flap').delay(300).queue(function () {
-                $(this).addClass('close_sesame').dequeue();
-            });
-        }  
+        $('.thanks').fadeIn(300).delay(1500).fadeOut(300);
+        $('.contact_form').removeClass('open_form');
+        $('.send_me').fadeOut(300);
+        $('.contact_me').fadeIn(300);
+        $('.top_flap').delay(300).queue(function () {
+            $(this).addClass('close_sesame').dequeue();
+        });
+        $('form')[0].submit();
     }
 });
