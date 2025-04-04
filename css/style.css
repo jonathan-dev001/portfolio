@@ -164,6 +164,17 @@ body {
     transform: scale(1.1);
   }
   
+  
+  
+  .timeline-panel h3,
+  .timeline-panel h4,
+  .timeline-panel h5 {
+    font-size: 18px;
+    line-height: 1.4;
+    word-break: break-word;
+  }
+  
+
   .timeline-panel-container {
     width: 50%;
     float: left;
@@ -175,7 +186,6 @@ body {
     float: right;
     clear: both;
   }
-  
   .timeline-panel {
     width: 90%;
     float: right;
@@ -186,6 +196,9 @@ body {
     position: relative;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
     background: #1a1a1a;
+    font-size: 15px;
+    line-height: 1.6;
+    word-break: break-word;
   }
   
   .timeline-panel:after {
