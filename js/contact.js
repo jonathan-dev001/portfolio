@@ -70,7 +70,6 @@ $('.send_me').on('click', function (e) {
         $('#message').css("border", "2px solid red");
     }
 
-    
     if (isValid) {
         $('.thanks').fadeIn(300).delay(1500).fadeOut(300);
         $('.contact_form').removeClass('open_form');
@@ -79,6 +78,11 @@ $('.send_me').on('click', function (e) {
         $('.top_flap').delay(300).queue(function () {
             $(this).addClass('close_sesame').dequeue();
         });
+
+        // ✅ Vider les champs avant envoi
+        $('form')[0].reset();
+
+        // ✅ Puis soumettre le formulaire à FormSubmit
         $('form')[0].submit();
     }
 });
