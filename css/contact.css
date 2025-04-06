@@ -103,7 +103,10 @@
     box-shadow: 0 4px 10px rgba(0, 255, 255, 0.3);
     z-index: 99999;
     animation: fadeInSeal 0.8s ease forwards;
+    line-height: 1;
+    padding-top: 2px; 
   }
+  
   
   @keyframes fadeInSeal {
     0% {
