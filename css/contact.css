@@ -279,7 +279,15 @@
     align-items: center;
     justify-content: center;
   }
+  #message-confirmation {
+    transition: opacity 0.6s ease;
+    opacity: 1;
+  }
   
+  #message-confirmation.hide {
+    opacity: 0;
+  }
+
   /* ========== RESPONSIVE MOBILE - Cacher l’enveloppe et afficher le formulaire ========== */
   @media (max-width: 768px) {
     .top_flap,
@@ -328,4 +336,5 @@
       display: none;
       }
   }
+
   
