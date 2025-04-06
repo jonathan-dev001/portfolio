@@ -261,6 +261,28 @@
   .text-center {
     text-align: center;
   }
+  .thanks {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'NexaBold';
+    font-size: 20px;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    color: #ffffff;
+    background: #5a9b9b;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 255, 255, 0.3);
+    z-index: 99999;
+    animation: fadeInSeal 0.8s ease forwards;
+  }
+  
   
   .reset {
     font-family: 'NexaBold';
