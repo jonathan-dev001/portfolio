@@ -5,6 +5,7 @@ body {
     padding: 0;
     background-color: #000000;
     max-width: 100vw;
+    overflow-x: hidden;
   }
   
   .heading {
@@ -72,8 +73,11 @@ body {
     margin: 0 6px;
     transition: color 0.3s ease, background-color 0.3s ease;
   }
-  
-  .nav-link.active,
+  .nav-link.active {
+    background-color: #30d5c8;
+    color: #000000 !important;
+  }
+
   .nav-link:hover {
     background-color: #30d5c8;
     color: #000000 !important;
@@ -97,7 +101,7 @@ body {
   }
   
   section {
-    padding: 65px 50px 80px 20px;
+    padding: 65px 8%; 
     margin-bottom: 40px;
     background-color: #121212;
     border-radius: 10px;
@@ -106,8 +110,9 @@ body {
     max-width: 1500px;
     margin-left: auto;
     margin-right: auto;
+    scroll-margin-top: 100px;
   }
-  
+
   /* TIMELINE */
   .timeline {
     padding: 30px 10px;
@@ -163,9 +168,7 @@ body {
     background-color: #5de0d2;
     transform: scale(1.1);
   }
-  
-  
-  
+
   .timeline-panel h3,
   .timeline-panel h4,
   .timeline-panel h5 {
@@ -286,7 +289,7 @@ body {
   /* PROJETS SECTION */
   #projets .container {
     position: relative;
-    min-height: 480px; /* pour assurer un peu d’espace vertical */
+    min-height: 480px; 
   }
   
   .cards-wrapper {
@@ -351,7 +354,7 @@ body {
 
   #projets .container {
     position: relative;
-    padding-bottom: 60px; /* pour éviter que le texte déborde */
+    padding-bottom: 60px; 
   }
   
   .coming-soon.fade-effect {
@@ -371,4 +374,5 @@ body {
     0%, 100% { opacity: 0; transform: translateY(10px); }
     50% { opacity: 1; transform: translateY(0); }
   }
+  
   
