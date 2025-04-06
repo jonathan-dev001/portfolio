@@ -406,9 +406,16 @@
                     const msg = document.getElementById("message-confirmation");
                     if (msg) {
                     msg.style.display = "block";
-                    document.getElementById("contact").scrollIntoView({
-                        behavior: "smooth"
-                    });
+                    setTimeout(() => {
+                        const contactSection = document.getElementById("contact");
+                        if (contactSection) {
+                        contactSection.scrollIntoView({ behavior: "smooth" });
+                        }
+                    }, 300);              
+                    setTimeout(() => {
+                        msg.style.display = "none";
+                        history.replaceState(null, "", window.location.pathname + "#contact");
+                    }, 20000);
                     }
                 }
                 });
