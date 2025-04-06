@@ -263,21 +263,24 @@
   }
   
   .reset {
-    font-family: 'NexaBold';
-    font-size: 16px;
+    font-family: 'NexaBold', sans-serif;
+    font-size: 18px;
     text-align: center;
-    color: #000000;
-    line-height: 20px;
+    color: #000;
+    line-height: 24px;
     position: absolute;
-    width: 20px;
-    height: 20px;
-    border-radius: 20px;
-    background-clip: padding-box;
-    background: #dcdcdc;
-    border: 4px solid #ffffff;
-    top: -10px;
-    right: -10px;
+    width: 36px;
+    height: 36px;
+    top: 2%;
+    right: 2%;
+    border-radius: 50%;
+    background-color: #dcdcdc;
+    border: 2px solid #fff;
+    z-index: 10;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   /* ========== RESPONSIVE MOBILE - Cacher l’enveloppe et afficher le formulaire ========== */
@@ -323,5 +326,9 @@
       padding: 10px;
       text-align: center;
     }
+   
+    .reset {
+      display: none;
+      }
   }
   
