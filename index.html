@@ -397,24 +397,34 @@
               });
             });
           </script>
-         <script>
-            window.addEventListener("DOMContentLoaded", () => {
-              const url = new URL(window.location.href);
-              if (url.search.includes("success=1")) {
-                const msg = document.getElementById("message-confirmation");
-                if (msg) {
-                  msg.style.display = "block";
-        
-                  setTimeout(() => {
-                    msg.classList.add("hide");
-                    setTimeout(() => {
-                      msg.style.display = "none";
-                    }, 600); 
-                  }, 10000);
-                }
+       <script>
+        window.addEventListener("DOMContentLoaded", () => {
+          const url = new URL(window.location.href);
+      
+          if (url.search.includes("success=1")) {
+            const msg = document.getElementById("message-confirmation");
+      
+            if (msg) {
+              msg.classList.add("show");
+              msg.style.display = "block";
+              const section = document.getElementById("contact");
+              if (section) {
+                section.scrollIntoView({ behavior: "smooth", block: "start" });
               }
-            });
-          </script>
-          
+              setTimeout(() => {
+                msg.classList.remove("show");
+                msg.classList.add("hide");
+                setTimeout(() => {
+                  msg.style.display = "none";
+                  msg.classList.remove("hide");
+                }, 600); 
+              }, 10000); 
+      
+              const cleanURL = window.location.origin + window.location.pathname + "#contact";
+              window.history.replaceState({}, document.title, cleanURL);
+            }
+          }
+        });
+      </script> 
     </body>
 </html>
