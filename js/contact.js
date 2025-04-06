@@ -71,14 +71,17 @@ $('.send_me').on('click', function (e) {
   }
 
   if (isValid) {
-    $('.thanks').fadeIn(300).delay(1500).fadeOut(300);
+    if ($(window).width() > 768) {
+      $('.thanks').fadeIn(300).delay(10000).fadeOut(300);
+    }
     $('.contact_form').removeClass('open_form');
     $('.send_me').fadeOut(300);
     $('.contact_me').fadeIn(300);
     $('.top_flap').delay(300).queue(function () {
       $(this).addClass('close_sesame').dequeue();
     });
-
-    e.currentTarget.closest("form").submit();
+    e.currentTarget.closest("form").reset();
+    e.currentTarget.closest("form").submit(); 
   }
+  
 });
