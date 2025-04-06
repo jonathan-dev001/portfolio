@@ -397,29 +397,24 @@
               });
             });
           </script>
-          <script>
-                window.addEventListener("DOMContentLoaded", () => {
-                const url = new URL(window.location.href);
-                const params = new URLSearchParams(url.search);
-
-                if (params.get("success") === "1") {
-                    const msg = document.getElementById("message-confirmation");
-                    if (msg) {
-                    msg.style.display = "block";
+         <script>
+            window.addEventListener("DOMContentLoaded", () => {
+              const url = new URL(window.location.href);
+              if (url.search.includes("success=1")) {
+                const msg = document.getElementById("message-confirmation");
+                if (msg) {
+                  msg.style.display = "block";
+        
+                  setTimeout(() => {
+                    msg.classList.add("hide");
                     setTimeout(() => {
-                        const contactSection = document.getElementById("contact");
-                        if (contactSection) {
-                        contactSection.scrollIntoView({ behavior: "smooth" });
-                        }
-                    }, 300);              
-                    setTimeout(() => {
-                        msg.style.display = "none";
-                        history.replaceState(null, "", window.location.pathname + "#contact");
-                    }, 20000);
-                    }
+                      msg.style.display = "none";
+                    }, 600); 
+                  }, 10000);
                 }
-                });
-
-          </script>         
+              }
+            });
+          </script>
+          
     </body>
 </html>
