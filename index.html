@@ -346,6 +346,7 @@
                       <input type="hidden" name="_next" value="https://jonathan-dev001.github.io/portfolio?success=1#contact">
                       <input type="hidden" name="_captcha" value="false">
                       <input type="text" name="_honey" style="display:none">
+
           
                       <div class="text-center mt-4">
                         <button type="submit" class="send_me mx-auto">Envoyer</button>
@@ -354,6 +355,7 @@
                   </form>
                 </div>
           
+                <!-- Tes éléments animés -->
                 <p class="contact_me">Écris-moi</p>
                 <p class="thanks">MERCI</p>
           
@@ -401,31 +403,39 @@
             if (url.searchParams.get("success") === "1") {
                 const msg = document.getElementById("message-confirmation");
                 const thanks = document.querySelector(".thanks");
-                const section = document.getElementById("contact");
-                if (msg && section && thanks) {
+                const envelope = document.querySelector(".envelope");
+                const isInViewport = (el) => {
+                const rect = el.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+                };
+                if (msg && envelope && thanks) {
                 msg.style.display = "block";
-                thanks.style.display = "block"; 
+                thanks.style.display = "block";
                 msg.classList.add("show");
-                section.scrollIntoView({ behavior: "smooth", block: "start" });
+                if (!isInViewport(envelope)) {
+                    envelope.scrollIntoView({ behavior: "smooth", block: "center" });
+                }
                 setTimeout(() => {
-                    msg.classList.add("show");
-                    setTimeout(() => {
                     msg.classList.remove("show");
                     msg.classList.add("hide");
-
+        
                     setTimeout(() => {
-                        msg.style.display = "none";
-                        msg.classList.remove("hide");
-                        thanks.style.display = "none";
-                    }, 600);
-                    }, 10000); 
-                }, 500);
+                    msg.style.display = "none";
+                    msg.classList.remove("hide");
+                    thanks.style.display = "none";
+                    }, 600); 
+                }, 10000); 
                 }
                 const cleanURL = window.location.origin + window.location.pathname + "#contact";
                 window.history.replaceState({}, document.title, cleanURL);
             }
             });
-
-        </script> 
+        </script>
+        
     </body>
 </html>
