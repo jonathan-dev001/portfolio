@@ -401,14 +401,23 @@
         window.addEventListener("DOMContentLoaded", () => {
           const url = new URL(window.location.href);
       
-          if (url.search.includes("success=1")) {
+          if (url.searchParams.get("success") === "1") {
             const msg = document.getElementById("message-confirmation");
       
             if (msg) {
-              msg.classList.add("show");
+              const isInViewport = (el) => {
+                const rect = el.getBoundingClientRect();
+                return (
+                  rect.top >= 0 &&
+                  rect.left >= 0 &&
+                  rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                  rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+              };
               msg.style.display = "block";
+              msg.classList.add("show");
               const section = document.getElementById("contact");
-              if (section) {
+              if (section && !isInViewport(section)) {
                 section.scrollIntoView({ behavior: "smooth", block: "start" });
               }
               setTimeout(() => {
@@ -417,14 +426,14 @@
                 setTimeout(() => {
                   msg.style.display = "none";
                   msg.classList.remove("hide");
-                }, 600); 
-              }, 10000); 
-      
+                }, 600);
+              }, 10000);
               const cleanURL = window.location.origin + window.location.pathname + "#contact";
               window.history.replaceState({}, document.title, cleanURL);
             }
           }
         });
-      </script> 
+      </script>
+      
     </body>
 </html>
