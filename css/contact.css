@@ -279,15 +279,7 @@
     align-items: center;
     justify-content: center;
   }
-  #message-confirmation {
-    transition: opacity 0.6s ease;
-    opacity: 1;
-  }
   
-  #message-confirmation.hide {
-    opacity: 0;
-  }
-
   /* ========== RESPONSIVE MOBILE - Cacher l’enveloppe et afficher le formulaire ========== */
   @media (max-width: 768px) {
     .top_flap,
@@ -336,5 +328,20 @@
       display: none;
       }
   }
-
+  #message-confirmation {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  
+  #message-confirmation.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  #message-confirmation.hide {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  
   
