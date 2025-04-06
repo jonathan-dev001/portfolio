@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="css/style.css">
         
     </head>
-    <body data-bs-spy="scroll" data-bs-target="#myNavBar" data-bs-offset="50">
+    <body data-bs-spy="scroll" data-bs-target="#myNavBar" data-bs-offset="100">
         <canvas ></canvas>
         <nav id="myNavBar" class="navbar navbar-expand-lg navbar-dark sticky-top">
             <a class="navbar-brand" href="#about">Jonathan</a>
@@ -22,7 +22,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="#about">Moi</a>
+                    <a class="nav-item nav-link" href="#about">Moi</a>
                     <a class="nav-item nav-link" href="#competences">Compétences</a>
                     <a class="nav-item nav-link" href="#experience">Expérience</a>
                     <a class="nav-item nav-link" href="#education">Éducation</a>
@@ -98,7 +98,7 @@
             <div class="container">
                 <div class="divider white"></div>
                 <div class="heading">
-                    <h2>Experience</h2>
+                    <h2>Expérience</h2>
                 </div>
                 <ul class="timeline">
                     <li data-aos="fade-down">
@@ -200,7 +200,7 @@
             <div class="container">
                 <div class="divider "></div>
                 <div class="heading">
-                    <h2>Education</h2>
+                    <h2>Éducation</h2>
                 </div>
                 <div class="row">
                     <div class="col-md-6" data-aos="flip-right">
@@ -246,8 +246,7 @@
               
           
             </div>
-          </section>
-          
+          </section>       
           
           <section id="contact">
             <div class="container">
@@ -255,21 +254,23 @@
               <div class="heading">
                 <h2>Contact</h2>
               </div>
-          
+              <div id="message-confirmation" class="alert alert-success text-center" style="display: none;">
+                Merci pour votre message ! Je vous répondrai bientôt.
+              </div>              
               <div class="envelope">
                 <div class="contact_form">
                   <span class="reset">x</span>
-          
+                    
                   <form action="https://formsubmit.co/jonathanherve0502@gmail.com" method="POST">
                     <fieldset>
                       <div class="form_row">
                         <div class="form_part">
                           <label for="prenom">Prénom</label>
-                          <input type="text" id="prenom" name="Prénom" placeholder="Veuillez saisir votre prénom" required />
+                          <input type="text" id="prenom" name="prenom" placeholder="Veuillez saisir votre prénom" required />
                         </div>
                         <div class="form_part">
-                          <label for="name">Nom</label>
-                          <input type="text" id="name" name="Nom" placeholder="Veuillez saisir votre nom" required />
+                          <label for="nom">Nom</label>
+                          <input type="text" id="nom" name="nom" placeholder="Veuillez saisir votre nom" required />
                         </div>
                       </div>
           
@@ -279,10 +280,9 @@
                       </div>
           
                       <div class="form_part">
-                        <label for="country">Pays</label>
-                        <input type="text" id="country" name="Pays" list="countries" placeholder="Veuillez saisir votre pays" />
+                        <label for="pays">Pays</label>
+                        <input type="text" id="pays" name="pays" list="countries" placeholder="Veuillez saisir votre pays" />
                         <datalist id="countries">
-                          <!-- LISTE COMPLETE DES PAYS -->
                           <option value="Afghanistan"><option value="Afrique du Sud"><option value="Albanie">
                           <option value="Algérie"><option value="Allemagne"><option value="Andorre"><option value="Angola">
                           <option value="Arabie Saoudite"><option value="Argentine"><option value="Arménie"><option value="Australie">
@@ -337,13 +337,17 @@
           
                       <div class="form_part">
                         <label for="message">Message</label>
-                        <textarea id="message" name="Message" placeholder="Veuillez saisir votre message" required></textarea>
+                        <textarea id="message" name="message" placeholder="Veuillez saisir votre message" required></textarea>
                       </div>
           
-                      <!-- Champs cachés FormSubmit -->
+                      <!-- Champs cachés -->
                       <input type="hidden" name="_subject" value="Nouveau message depuis ton portfolio !">
                       <input type="hidden" name="_autoresponse" value="Merci pour votre message ! Je vous répondrai dans les plus brefs délais.">
+                      <input type="hidden" name="_next" value="https://jonathan-dev001.github.io/portfolio/#contact?success=1">
                       <input type="hidden" name="_captcha" value="false">
+                      <input type="text" name="_honey" style="display:none">
+
+          
                       <div class="text-center mt-4">
                         <button type="submit" class="send_me mx-auto">Envoyer</button>
                       </div>
@@ -361,7 +365,7 @@
               </div>
             </div>
           </section>
-          
+
         <script src="js/contact.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
         <script>
@@ -372,5 +376,35 @@
             });
         </script>
         <script src="js/script.js"></script>
+        <script>
+            $(document).ready(function () {
+              const sections = $("section");
+              const navLinks = $(".nav-link");
+          
+              $(window).on("scroll", function () {
+                let currentScroll = $(this).scrollTop() + 150;
+          
+                sections.each(function () {
+                  const top = $(this).offset().top;
+                  const bottom = top + $(this).outerHeight();
+          
+                  if (currentScroll >= top && currentScroll <= bottom) {
+                    const id = $(this).attr("id");
+                    navLinks.removeClass("active");
+                    $('.nav-link[href="#' + id + '"]').addClass("active");
+                  }
+                });
+              });
+            });
+          </script>
+          <script>
+            window.addEventListener("DOMContentLoaded", () => {
+              const url = new URL(window.location.href);
+              if (url.search.includes("success=1")) {
+                const msg = document.getElementById("message-confirmation");
+                if (msg) msg.style.display = "block";
+              }
+            });
+          </script>         
     </body>
 </html>
