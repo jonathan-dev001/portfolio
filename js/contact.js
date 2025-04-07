@@ -22,7 +22,7 @@ $(document).ready(function () {
     $('input, textarea').css("border", "none");
   });
 
-  $('.send_me').on('click', async function (e) {
+  $('.send_me').on('click', function (e) {
     e.preventDefault();
 
     let isValid = true;
@@ -63,36 +63,8 @@ $(document).ready(function () {
     }
 
     if (isValid) {
-      const form = document.getElementById("contactForm");
-      const formData = new FormData(form);
-
-      // Obligatoire pour FormSubmit
-      formData.append("_subject", "Nouveau message depuis ton portfolio !");
-      formData.append("_autoresponse", "Merci pour votre message !");
-      formData.append("_captcha", "false");
-
-      try {
-        const response = await fetch("https://formsubmit.co/el/doraxa", {
-          method: "POST",
-          body: formData
-        });
-
-        if (response.ok) {
-          form.reset();
-          $('.thanks').fadeIn(300).delay(10000).fadeOut(300);
-          $('.contact_form').removeClass('open_form');
-          $('.send_me').fadeOut(300);
-          $('.contact_me').fadeIn(300);
-          $('.top_flap').delay(300).queue(function () {
-            $(this).addClass('close_sesame').dequeue();
-          });
-        } else {
-          alert("Erreur lors de l'envoi du formulaire.");
-        }
-      } catch (error) {
-        console.error("Erreur fetch :", error);
-        alert("Erreur de réseau.");
-      }
+      // Soumission normale du formulaire HTML
+      document.getElementById("contactForm").submit();
     }
   });
 });
