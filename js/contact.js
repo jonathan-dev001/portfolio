@@ -81,7 +81,5 @@ $('.send_me').on('click', function (e) {
       $(this).addClass('close_sesame').dequeue();
     });
     e.currentTarget.closest("form").reset();
-    e.currentTarget.closest("form").submit(); 
   }
-  
 });
