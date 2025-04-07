@@ -256,12 +256,11 @@
               </div>
               <div id="message-confirmation" class="alert alert-success text-center" style="display: none;">
                 Merci pour votre message ! Je vous répondrai bientôt.
-              </div>              
+              </div>
               <div class="envelope">
                 <div class="contact_form">
                   <span class="reset">x</span>
-                    
-                  <form action="https://formsubmit.co/el/doraxa" method="POST">
+                  <form id="contactForm">
                     <fieldset>
                       <div class="form_row">
                         <div class="form_part">
@@ -273,12 +272,10 @@
                           <input type="text" id="nom" name="nom" placeholder="Veuillez saisir votre nom" required />
                         </div>
                       </div>
-          
                       <div class="form_part">
                         <label for="email">Adresse courriel</label>
                         <input type="email" id="email" name="email" placeholder="Veuillez saisir votre adresse courriel" required />
                       </div>
-          
                       <div class="form_part">
                         <label for="pays">Pays</label>
                         <input type="text" id="pays" name="pays" list="countries" placeholder="Veuillez saisir votre pays" />
@@ -308,7 +305,7 @@
                           <option value="Jamaïque"><option value="Japon"><option value="Jordanie"><option value="Kazakhstan">
                           <option value="Kenya"><option value="Kirghizistan"><option value="Kiribati"><option value="Kosovo">
                           <option value="Koweït"><option value="Laos"><option value="Lesotho"><option value="Lettonie">
-                          <option value="Liban"><option value="Liberia"><option value="Libye"><option value="Liechtenstein">
+                          <option value="Liban"><option value="Libéria"><option value="Libye"><option value="Liechtenstein">
                           <option value="Lituanie"><option value="Luxembourg"><option value="Macédoine du Nord"><option value="Madagascar">
                           <option value="Malaisie"><option value="Malawi"><option value="Maldives"><option value="Mali">
                           <option value="Malte"><option value="Maroc"><option value="Maurice"><option value="Mauritanie">
@@ -334,38 +331,28 @@
                           <option value="Venezuela"><option value="Vietnam"><option value="Yémen"><option value="Zambie"><option value="Zimbabwe">
                         </datalist>
                       </div>
-          
                       <div class="form_part">
                         <label for="message">Message</label>
                         <textarea id="message" name="message" placeholder="Veuillez saisir votre message" required></textarea>
                       </div>
-          
-                      <!-- Champs cachés -->
                       <input type="hidden" name="_subject" value="Nouveau message depuis ton portfolio !">
                       <input type="hidden" name="_autoresponse" value="Merci pour votre message ! Je vous répondrai dans les plus brefs délais.">
-                      <input type="hidden" name="_next" value="https://jonathan-dev001.github.io/portfolio/?success=1#contact">
                       <input type="hidden" name="_captcha" value="false">
                       <input type="text" name="_honey" style="display:none">
-
-          
                       <div class="text-center mt-4">
                         <button type="submit" class="send_me mx-auto">Envoyer</button>
                       </div>
                     </fieldset>
                   </form>
                 </div>
-          
-                <!-- Tes éléments animés -->
                 <p class="contact_me">Écris-moi</p>
                 <p class="thanks">MERCI</p>
-          
                 <span class="top_flap close_sesame"></span>
                 <span class="side_flaps"></span>
                 <span class="bottom_flap"></span>
               </div>
             </div>
         </section>
-
         <script src="js/contact.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
         <script>
@@ -398,44 +385,53 @@
             });
         </script>
         <script>
-            window.addEventListener("DOMContentLoaded", () => {
-            const url = new URL(window.location.href);
-            if (url.searchParams.get("success") === "1") {
-                const msg = document.getElementById("message-confirmation");
-                const thanks = document.querySelector(".thanks");
-                const envelope = document.querySelector(".envelope");
-                const isInViewport = (el) => {
-                const rect = el.getBoundingClientRect();
-                return (
-                    rect.top >= 0 &&
-                    rect.left >= 0 &&
-                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-                );
-                };
-                if (msg && envelope && thanks) {
-                msg.style.display = "block";
-                thanks.style.display = "block";
-                msg.classList.add("show");
-                if (!isInViewport(envelope)) {
-                    envelope.scrollIntoView({ behavior: "smooth", block: "center" });
-                }
-                setTimeout(() => {
-                    msg.classList.remove("show");
-                    msg.classList.add("hide");
-        
+            document.addEventListener("DOMContentLoaded", function () {
+              const form = document.getElementById("contactForm");
+              const msg = document.getElementById("message-confirmation");
+              const thanks = document.querySelector(".thanks");
+            
+              form.addEventListener("submit", async function (e) {
+                e.preventDefault();
+            
+                const formData = new FormData(form);
+                formData.append("_subject", "Nouveau message depuis ton portfolio !");
+                formData.append("_autoresponse", "Merci pour votre message ! Je vous répondrai dans les plus brefs délais.");
+                formData.append("_captcha", "false");
+            
+                const endpoint = "https://formsubmit.co/el/doraxa";
+            
+                try {
+                  const response = await fetch(endpoint, {
+                    method: "POST",
+                    body: formData,
+                  });
+            
+                  if (response.ok) {
+                    msg.style.display = "block";
+                    msg.classList.add("show");
+                    thanks.style.display = "block";
+            
+                    form.reset();
+            
                     setTimeout(() => {
-                    msg.style.display = "none";
-                    msg.classList.remove("hide");
-                    thanks.style.display = "none";
-                    }, 600); 
-                }, 10000); 
+                      msg.classList.remove("show");
+                      msg.classList.add("hide");
+            
+                      setTimeout(() => {
+                        msg.style.display = "none";
+                        msg.classList.remove("hide");
+                        thanks.style.display = "none";
+                      }, 600);
+                    }, 10000);
+                  } else {
+                    alert("Une erreur est survenue. Merci de réessayer.");
+                  }
+                } catch (error) {
+                  alert("Erreur lors de l'envoi du formulaire.");
+                  console.error("Erreur :", error);
                 }
-                const cleanURL = window.location.origin + window.location.pathname + "#contact";
-                window.history.replaceState({}, document.title, cleanURL);
-            }
+              });
             });
-        </script>
-        
+        </script>            
     </body>
 </html>
