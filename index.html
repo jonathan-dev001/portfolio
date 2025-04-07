@@ -384,55 +384,5 @@
               });
             });
         </script>
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-              const form = document.getElementById("contactForm");
-              const msg = document.getElementById("message-confirmation");
-              const thanks = document.querySelector(".thanks");
-            
-              form.addEventListener("submit", async function (e) {
-                e.preventDefault();
-            
-                const formData = new FormData(form);
-                formData.append("_subject", "Nouveau message depuis ton portfolio !");
-                formData.append("_autoresponse", "Merci pour votre message ! Je vous répondrai dans les plus brefs délais.");
-                formData.append("_captcha", "false");
-            
-                const endpoint = "https://formsubmit.co/el/doraxa";
-
-            
-                try {
-                  const response = await fetch(endpoint, {
-                    method: "POST",
-                    body: formData,
-                  });
-            
-                  if (response.ok) {
-                    msg.style.display = "block";
-                    msg.classList.add("show");
-                    thanks.style.display = "block";
-            
-                    form.reset();
-            
-                    setTimeout(() => {
-                      msg.classList.remove("show");
-                      msg.classList.add("hide");
-            
-                      setTimeout(() => {
-                        msg.style.display = "none";
-                        msg.classList.remove("hide");
-                        thanks.style.display = "none";
-                      }, 600);
-                    }, 10000);
-                  } else {
-                    alert("Une erreur est survenue. Merci de réessayer.");
-                  }
-                } catch (error) {
-                  alert("Erreur lors de l'envoi du formulaire.");
-                  console.error("Erreur :", error);
-                }
-              });
-            });
-        </script>            
     </body>
 </html>
