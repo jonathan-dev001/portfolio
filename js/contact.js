@@ -55,11 +55,25 @@ $(document).ready(function () {
         $('#message').after('<div class="error">Message vide</div>').css("border", "2px solid red");
       }
   
-      if (isValid) {
-        document.getElementById("contactForm").submit();
-      } else {
-        e.preventDefault();
+      if (!isValid) {
+        e.preventDefault(); 
       }
     });
+  
+    if (window.location.search.includes("success=1")) {
+      const confirmation = document.getElementById("message-confirmation");
+      const thanks = document.querySelector(".thanks");
+  
+      if (confirmation) confirmation.style.display = "block";
+      if (thanks) thanks.style.display = "block";
+  
+      setTimeout(() => {
+        confirmation.style.display = "none";
+        thanks.style.display = "none";
+        const url = new URL(window.location);
+        url.search = "";
+        window.history.replaceState({}, document.title, url);
+      }, 8000);
+    }
   });
   
