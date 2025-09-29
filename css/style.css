@@ -350,6 +350,32 @@ body {
       transform: rotate(360deg);
     }
   }
+  .card.project { position: relative; }
+.card.project .card_inner { z-index: 0; }
+
+.card.project .project-thumb {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover;
+  opacity: .5; filter: grayscale(15%);
+  z-index: 1;
+}
+
+.card.project .project-content {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 16px;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(26,26,26,.9) 40%, rgba(26,26,26,1) 100%);
+  z-index: 2; color: #fff;
+}
+
+.card.project h5 { margin: 0 0 4px; color: #fff; }
+.card.project .stack { color: #30d5c8; font-size: .9rem; margin-bottom: .5rem; }
+
+.card.project .features { margin: 0 0 .75rem; padding: 0; }
+.card.project .features li { list-style: none; color: #ccc; font-size: .95rem; }
+.card.project .features li::before { content: "• "; color: #30d5c8; margin-right: 6px; }
+
+.card.project .links { display: flex; gap: 8px; flex-wrap: wrap; color: #30d5c8; }
+
   
 
   #projets .container {
