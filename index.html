@@ -245,11 +245,31 @@
                 <a href="https://github.com/jonathan-dev001/Rental-Car-Website" class="btn btn-outline-secondary btn-sm" target="_blank" rel="noopener" style="color: #30d5c8;">Code</a>
                 </div>
             </div>
-            </div>
+        </div>
+            
+        <div class="card project" data-aos="zoom-in">
+            <div class="card_inner"></div>
+            <video class="project-thumb" autoplay muted loop playsinline
+                poster="images/projets/portail-informatique-poster.jpg">
+                <source src="images/demo.mp4" type="video/mp4">
+            </video>
 
-          <div class="card"><div class="card_inner">Projet 2</div></div>
-          <div class="card"><div class="card_inner">Projet 3</div></div>
-          <div class="card"><div class="card_inner">Projet 4</div></div>
+            <div class="project-content">
+                <h5>Portail Informatique(En cours de Developpement)</h5>
+                <p class="stack">HTML-CSS-JS-Springboot(Back-end)</p>
+                <ul class="features">
+                <li>Étudiant : gérer ses cours, remettre des travaux, suivre ses notes</li>
+                <li>Professeur : créer un cours, gérer les étudiants, publier des notes de cours</li>
+                <li>Entreprise : proposer des stages, recevoir des candidatures</li>
+                </ul>
+                <div class="links">
+                    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#proj2-video" style="background-color: #30d5c8">Voir la vidéo</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card"><div class="card_inner">Projet 3</div></div>
+        <div class="card"><div class="card_inner">Projet 4</div></div>
         </div>
         <div class="coming-soon fade-effect">
           Projets à venir...
@@ -362,6 +382,21 @@
         </div>
       </div>
     </section>
+    <div class="modal fade" id="proj2-video" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content bg-black border-0">
+      <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
+              data-bs-dismiss="modal" aria-label="Fermer"></button>
+      <video id="proj2-player" controls playsinline class="w-100 h-100"
+             style="object-fit:contain;background:#000"
+             poster="images/projets/portail-informatique-poster.jpg">
+        <source src="images/Portail%20Informatique%20DEMO.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la vidéo HTML5.
+      </video>
+    </div>
+  </div>
+</div>
+
     <script src="js/contact.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>

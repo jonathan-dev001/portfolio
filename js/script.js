@@ -49,6 +49,41 @@ function draw() {
 
 setInterval(draw, 33);
 
+document.addEventListener('DOMContentLoaded', () => {
+  const modalId = 'proj2-video';
+  const videoId = 'proj2-player';
+  const scrollTargetSelector = '#projets'; 
+
+  const modalEl = document.getElementById(modalId);
+  if (!modalEl) return;
+
+  const videoEl = document.getElementById(videoId);
+  const closeBtn = modalEl.querySelector('.btn-close');
+
+  if (videoEl) videoEl.style.zIndex = 1;
+  if (closeBtn) closeBtn.style.zIndex = 5;
+
+  modalEl.addEventListener('shown.bs.modal', () => {
+    if (!videoEl) return;
+    const p = videoEl.play();
+    if (p && typeof p.catch === 'function') p.catch(() => {});
+  });
+  modalEl.addEventListener('hidden.bs.modal', () => {
+    if (videoEl) { videoEl.pause(); videoEl.currentTime = 0; }
+    const target = document.querySelector(scrollTargetSelector);
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+    else window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      try {
+        const inst = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
+        inst.hide();
+      } catch (_) {}
+    });
+  }
+});
+
 
 window.addEventListener('resize', function() {
     canvas.width = window.innerWidth; 
