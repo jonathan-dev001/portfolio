@@ -1,619 +1,734 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-    <title>CV Jonathan</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/contact.css">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Security headers -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; form-action https://formsubmit.co; connect-src 'self'; frame-ancestors 'none';" />
+  <meta name="description" content="Jonathan Hervé, développeur full-stack à Montréal. Création de sites web vitrine, applications web Angular/Spring Boot et apps Android. Disponible en freelance et pour des postes développeur." />
+  <meta name="keywords" content="développeur full-stack Montréal, freelance développeur web, création site web Montréal, Angular, Spring Boot, application Android, Jonathan Hervé" />
+  <meta name="author" content="Jonathan Hervé" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <!-- Open Graph -->
+  <meta property="og:type"          content="website" />
+  <meta property="og:url"           content="https://jonathan-dev001.github.io/portfolio/" />
+  <meta property="og:title"         content="Jonathan Hervé — Développeur Full-Stack à Montréal" />
+  <meta property="og:description"   content="Sites vitrine, applications web et apps Android. Développeur full-stack disponible en freelance ou pour un poste à Montréal." />
+  <meta property="og:image"         content="https://jonathan-dev001.github.io/images/rental-car-website.png" />
+  <meta property="og:image:width"   content="1200" />
+  <meta property="og:image:height"  content="630" />
+  <meta property="og:image:alt"     content="Aperçu du portfolio de Jonathan Hervé, développeur full-stack" />
+  <meta property="og:locale"        content="fr_CA" />
+  <meta property="og:locale:alternate" content="en_CA" />
+  <meta property="og:site_name"     content="Jonathan Hervé — Portfolio" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Jonathan Hervé — Développeur Full-Stack à Montréal" />
+  <meta name="twitter:description" content="Sites vitrine, applications web et apps Android. Disponible en freelance ou pour un poste développeur." />
+  <meta name="twitter:image"       content="https://jonathan-dev001.github.io/images/rental-car-website.png" />
+  <meta name="twitter:image:alt"   content="Portfolio de Jonathan Hervé, développeur full-stack" />
+  <meta name="twitter:creator"     content="@jonathanherve" />
+  <title>Jonathan Hervé — Développeur Full-Stack à Montréal</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="canonical" href="https://jonathan-dev001.github.io/portfolio/" />
+  <!-- Favicon SVG "J" -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://jonathan-dev001.github.io/portfolio/#person",
+        "name": "Jonathan Hervé",
+        "url": "https://jonathan-dev001.github.io/portfolio/",
+        "image": "https://jonathan-dev001.github.io/images/rental-car-website.png",
+        "jobTitle": "Développeur Full-Stack",
+        "description": "Développeur full-stack à Montréal spécialisé en sites web vitrine, applications web Angular/Spring Boot et applications Android.",
+        "email": "jonathanherve0502@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Montréal",
+          "addressRegion": "QC",
+          "addressCountry": "CA"
+        },
+        "sameAs": [
+          "https://github.com/jonathan-dev001",
+          "https://www.linkedin.com/in/jonathan-hervé-967159359"
+        ],
+        "knowsAbout": ["Angular", "Spring Boot", "Java", "JavaScript", "SQL", "Android", "HTML", "CSS", "Développement web", "Développement mobile"],
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "Cégep de Rosemont",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Montréal",
+            "addressRegion": "QC",
+            "addressCountry": "CA"
+          }
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://jonathan-dev001.github.io/portfolio/#website",
+        "url": "https://jonathan-dev001.github.io/portfolio/",
+        "name": "Jonathan Hervé — Portfolio",
+        "description": "Portfolio de Jonathan Hervé, développeur full-stack à Montréal.",
+        "author": { "@id": "https://jonathan-dev001.github.io/portfolio/#person" },
+        "inLanguage": ["fr-CA", "en-CA"]
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://jonathan-dev001.github.io/portfolio/#service",
+        "name": "Jonathan Hervé — Développeur Freelance",
+        "url": "https://jonathan-dev001.github.io/portfolio/",
+        "description": "Services de développement web et mobile freelance à Montréal.",
+        "provider": { "@id": "https://jonathan-dev001.github.io/portfolio/#person" },
+        "areaServed": {
+          "@type": "City",
+          "name": "Montréal",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Québec"
+          }
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Services de développement",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Site web vitrine",
+                "description": "Création de sites web vitrine professionnels, design responsive."
+              },
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "price": "1200",
+                "priceCurrency": "CAD",
+                "minPrice": "1200"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Application web",
+                "description": "Développement d'applications web complètes Angular + Spring Boot."
+              },
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "price": "3500",
+                "priceCurrency": "CAD",
+                "minPrice": "3500"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Application Android",
+                "description": "Développement d'applications Android en Java, Kotlin ou Flutter."
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2307111d'/><text x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='bold' fill='%23d8c18a' text-anchor='middle'>J</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
 </head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+  <div class="bg-glow" aria-hidden="true"></div>
 
-<body data-bs-spy="scroll" data-bs-target="#myNavBar" data-bs-offset="100">
-    <canvas></canvas>
-    <nav id="myNavBar" class="navbar navbar-expand-lg navbar-dark sticky-top">
-        <a class="navbar-brand" href="#about">Jonathan</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+  <nav id="nav" aria-label="Navigation principale">
+    <div class="nav-wrap">
+      <a href="#accueil" class="logo" aria-label="JHC — Retour à l'accueil">
+        <svg width="48" height="36" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path class="logo-arc" d="M76,18 A34,34 0 1,0 76,70" stroke="var(--gold)" stroke-width="6" stroke-linecap="round"/>
+          <text class="logo-text" x="40" y="52" font-family="Arial,sans-serif" font-size="24" font-weight="900" fill="var(--gold)" text-anchor="middle" letter-spacing="-1">JH</text>
+        </svg>
+      </a>
+
+      <!-- Desktop nav -->
+      <ul class="nl" id="menu">
+        <li><a href="#a-propos"    data-s="a-propos"    data-fr="Profil"      data-en="Profile">Profil</a></li>
+        <li><a href="#services"    data-s="services"    data-fr="Services"    data-en="Services">Services</a></li>
+        <li><a href="#projets"     data-s="projets"     data-fr="Projets"     data-en="Projects">Projets</a></li>
+        <li><a href="#stack"       data-s="stack"       data-fr="Compétences" data-en="Skills">Compétences</a></li>
+        <li><a href="#temoignages" data-s="temoignages" data-fr="Processus"   data-en="Process">Processus</a></li>
+        <li><a href="#contact"     data-s="contact"     data-fr="Contact"     data-en="Contact">Contact</a></li>
+      </ul>
+
+      <!-- Desktop droite -->
+      <div class="nr">
+        <button class="theme-btn" id="themeToggle" aria-label="Basculer le thème" title="Thème clair / sombre">
+          <span class="theme-icon">🌙</span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link" href="#about">Moi</a>
-                <a class="nav-item nav-link" href="#competences">Compétences</a>
-                <a class="nav-item nav-link" href="#experience">Expérience</a>
-                <a class="nav-item nav-link" href="#education">Éducation</a>
-                <a class="nav-item nav-link" href="#projets">Projets</a>
-                <a class="nav-item nav-link" href="#contact">Contact</a>
-            </div>
+                <div class="lang" aria-label="Choix de langue">
+          <button class="lb on" data-l="fr" type="button">FR</button>
+          <button class="lb"    data-l="en" type="button">EN</button>
         </div>
-    </nav>
-    <section id="about" class="container-fluid" data-aos="fade-up">
-        <div class="heading" data-aos="fade-left">
-            <h1>Jonathan</h1>
-            <h3>Développeur web</h3>
-            <p class="typer"
-                data-text="Je suis finissant en informatique, passionné par la programmation web, la cybersécurité et les jeux vidéo. J'ai développé des compétences en développement web avec des technologies comme HTML, CSS, JavaScript et Node.js. J'adore relever des défis techniques et toujours apprendre de nouvelles choses !">
-            </p>
-            <a href="images/CV Jonathan.pdf" class="btn btn-outline-light btn-lg button1">Télécharger CV</a>
-        </div>
-        <script src="js/presentation.js"></script>
-    </section>
-    <section id="competences" class="container-fluid" data-aos="fade-up">
-        <div class="divider"></div>
-        <div class="heading">
-            <h2>Compétences</h2>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="progress" data-aos="zoom-in">
-                        <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85"
-                            aria-valuemin="0" aria-valuemax="100">HTML 85%</div>
-                    </div>
-                    <div class="progress" data-aos="zoom-in">
-                        <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80"
-                            aria-valuemin="0" aria-valuemax="100">CSS 80%</div>
-                    </div>
-                    <div class="progress" data-aos="zoom-in">
-                        <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75"
-                            aria-valuemin="0" aria-valuemax="100">JavaScript 75%</div>
-                    </div>
-                    <div class="progress" data-aos="zoom-in">
-                        <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="70"
-                            aria-valuemin="0" aria-valuemax="100">Bootstrap 70%</div>
-                    </div>
-                    <div class="progress" data-aos="zoom-in">
-                        <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="=60"
-                            aria-valuemin="0" aria-valuemax="100">Asp.net 60%</div>
-                    </div>
-                    <div class="progress" data-aos="zoom-in">
-                        <div class="progress-bar" role="progressbar" style="width: 45%;" aria-valuenow="=45"
-                            aria-valuemin="0" aria-valuemax="100">Python 45%</div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="progress" data-aos="zoom-in">
-                        <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80"
-                            aria-valuemin="0" aria-valuemax="100">Angular 80%</div>
-                    </div>
-                    <div class="progress" data-aos="zoom-in">
-                        <div class="progress-bar" role="progressbar" style="width: 87%;" aria-valuenow="87"
-                            aria-valuemin="0" aria-valuemax="100">JavaEE 87%</div>
-                    </div>
-                    <div class="progress" data-aos="zoom-in">
-                        <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85"
-                            aria-valuemin="0" aria-valuemax="100">Springboot 85%</div>
-                    </div>
-                    <div class="progress" data-aos="zoom-in">
-                        <div class="progress-bar" role="progressbar" style="width: 20%;" aria-valuenow="20"
-                            aria-valuemin="0" aria-valuemax="100">React 20%</div>
-                    </div>
-                    <div class="progress" data-aos="zoom-in">
-                        <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90"
-                            aria-valuemin="0" aria-valuemax="100">SQL 90%</div>
-                    </div>
-                    <div class="progress" data-aos="zoom-in">
-                        <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="=50"
-                            aria-valuemin="0" aria-valuemax="100">PHP 50%</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="experience">
-        <div class="container">
-            <div class="divider white"></div>
-            <div class="heading">
-                <h2>Expérience</h2>
-            </div>
-            <ul class="timeline">
-                <li data-aos="fade-down">
-                    <div class="timeline-badge"></div>
-                    <div class="timeline-panel-container">
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h3>Developpement web</h3>
-                                <h4>Front-End </h4>
-                                <p class="text-muted"></p>
-                            </div>
-                            <div class="timeline-body">
-                                <p>Développement Web (HTML, CSS, JavaScript)
-                                    Création de sites web responsives et dynamiques. Familiarisation avec les meilleures
-                                    pratiques pour l'intégration de contenu et le design.</p>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li data-aos="fade-up">
-                    <div class="timeline-badge"></div>
-                    <div class="timeline-panel-container-inverted">
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h3>Developpement web</h3>
-                                <h4>Back-end </h4>
-                                <p class="text-muted"></p>
-                            </div>
-                            <div class="timeline-body">
-                                <p>Développement Web (PHP, Java EE, Spring Boot et ASP.NET)
-                                    pour développer des applications web robustes et scalables, avec gestion des bases
-                                    de données, API RESTful, et optimisation des performances. Expérience avec
-                                    l'architecture MVC </p>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li data-aos="flip-left">
-                    <div class="timeline-badge"></div>
-                    <div class="timeline-panel-container">
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h3>Developpement mobile</h3>
-                                <h4>Android</h4>
-                                <p class="text-muted"></p>
-                            </div>
-                            <div class="timeline-body">
-                                <p>Développement d'applications mobiles natives pour Android en Java et Kotlin, en
-                                    tirant parti des frameworks et outils modernes pour créer des applications
-                                    performantes et optimisées.</p>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li data-aos="flip-right">
-                    <div class="timeline-badge"><span class="bi-backpack-fill"></span></div>
-                    <div class="timeline-panel-container-inverted">
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h3>Base de données</h3>
-                                <h4>SQL</h4>
-                                <p class="text-muted"></p>
-                            </div>
-                            <div class="timeline-body">
-                                <p>Conception, gestion et optimisation de bases de données relationnelles avec MySQL,
-                                    MariaDB et MySQL Workbench. Compétences avancées en SQL pour la gestion des données,
-                                    y compris l'insertion, la mise à jour et l'optimisation des requêtes.</p>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li data-aos="zoom-in-up">
-                    <div class="timeline-badge"><span class="bi-backpack-fill"></span></div>
-                    <div class="timeline-panel-container">
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h3>Collaboration</h3>
-                                <h4>Git</h4>
-                                <p class="text-muted"></p>
-                            </div>
-                            <div class="timeline-body">
-                                <p>Utilisation de Git pour le versioning et la collaboration efficace au sein des
-                                    équipes de développement. Gestion des versions de code, résolution de conflits, et
-                                    suivi des progrès des projets à travers des branches et des commits réguliers.</p>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li data-aos="zoom-in-up">
-                    <div class="timeline-badge"><span class="bi-backpack-fill"></span></div>
-                    <div class="timeline-panel-container-inverted">
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h3>Développement de Jeux</h3>
-                                <h4>Unity</h4>
-                                <p class="text-muted"></p>
-                            </div>
-                            <div class="timeline-body">
-                                <p>Développement de jeux interactifs en 2D et 3D avec Unity. Maîtrise de la création de
-                                    mécanismes de jeu, de l'intégration des assets, ainsi que du scripting en C# pour
-                                    gérer les interactions et la logique du jeu. Optimisation des performances et
-                                    conception de niveaux immersifs pour une expérience utilisateur fluide.</p>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </section>
-    <section id="education">
-        <div class="container">
-            <div class="divider"></div>
-            <div class="heading">
-                <h2>Éducation</h2>
-            </div>
-            <div class="row">
-                <div class="col-md-6" data-aos="flip-right">
-                    <div class="education-block">
-                        <h5>2013-2018</h5>
-                        <span class="bi-award-fill"></span>
-                        <h3>Paul Gerin Lajoie</h3>
-                        <h4>Diplome d'étude secondaire</h4>
-                        <div class="divider"></div>
-                        <p>Parcours secondaire regulier</p>
-                        <p></p>
-                    </div>
-                </div>
-                <div class="col-md-6" data-aos="flip-right">
-                    <div class="education-block">
-                        <h5>2019-2025</h5>
-                        <span class="bi-award-fill"></span>
-                        <h3>Cegep de Rosemont</h3>
-                        <h4>Diplome d'étude Collegiale</h4>
-                        <div class="divider"></div>
-                        <p>Programmation web et mobile</p>
-                        <p></p>
-                    </div>
-                </div>
-            </div>
-    </section>
-    <section id="projets">
-        <div class="container">
-            <div class="divider"></div>
-            <div class="heading">
-                <h2>Projets</h2>
-            </div>
-            <div class="cards-wrapper">
-                <div class="card project" data-aos="zoom-in">
-                    <div class="card_inner"></div>
-                    <img class="project-thumb" src="images/rental-car-website.png" alt="Jon Rental Car – capture">
-                    <div class="project-content">
-                        <h5>Site de location de voiture</h5>
-                        <p class="stack">HTML - CSS - JavaScript</p>
-                        <ul class="features">
-                            <li>Auth (inscription/connexion) avec persistance locale</li>
-                            <li>Catalogue & fiches véhicules dynamiques</li>
-                            <li>Réservation + paiement simulé + visualisation</li>
-                        </ul>
-                        <div class="links">
-                            <a href="https://jon-rental-car.netlify.app" class="btn btn-primary btn-sm" target="_blank"
-                                rel="noopener" style="background-color: #30d5c8; ">Démo</a>
-                            <a href="https://github.com/jonathan-dev001/Rental-Car-Website"
-                                class="btn btn-outline-secondary btn-sm" target="_blank" rel="noopener"
-                                style="color: #30d5c8;">Code</a>
-                        </div>
-                    </div>
-                </div>
+        <div class="badge"><span class="bd"></span><span data-fr="Disponible dès maintenant" data-en="Available now">Disponible dès maintenant</span></div>
+      </div>
 
-                <div class="card project" data-aos="zoom-in">
-                    <div class="card_inner"></div>
-                    <video class="project-thumb" autoplay muted loop playsinline
-                        poster="images/projets/portail-informatique-poster.jpg">
-                        <source src="images/demo.mp4" type="video/mp4">
-                    </video>
+      <!-- Burger tout à droite -->
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
 
-                    <div class="project-content">
-                        <h5>Portail Informatique(En cours de Developpement)</h5>
-                        <p class="stack">HTML-CSS-JS-Springboot(Back-end)</p>
-                        <ul class="features">
-                            <li>Étudiant : gérer ses cours, remettre des travaux, suivre ses notes</li>
-                            <li>Professeur : créer un cours, gérer les étudiants, publier des notes de cours</li>
-                            <li>Entreprise : proposer des stages, recevoir des candidatures</li>
-                        </ul>
-                        <div class="links">
-                            <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#proj2-video"
-                                style="background-color: #30d5c8">Voir la vidéo</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card_inner">Projet 3</div>
-                </div>
-                <div class="card">
-                    <div class="card_inner">Projet 4</div>
-                </div>
-            </div>
-            <div class="coming-soon fade-effect">
-                Projets à venir...
-            </div>
+      <!-- Menu mobile -->
+      <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <ul>
+          <li><a href="#a-propos"    data-s="a-propos"    data-fr="Profil"      data-en="Profile">Profil</a></li>
+          <li><a href="#services"    data-s="services"    data-fr="Services"    data-en="Services">Services</a></li>
+          <li><a href="#projets"     data-s="projets"     data-fr="Projets"     data-en="Projects">Projets</a></li>
+          <li><a href="#stack"       data-s="stack"       data-fr="Compétences" data-en="Skills">Compétences</a></li>
+          <li><a href="#temoignages" data-s="temoignages" data-fr="Processus"   data-en="Process">Processus</a></li>
+          <li><a href="#contact"     data-s="contact"     data-fr="Contact"     data-en="Contact">Contact</a></li>
+        </ul>
+        <div class="mobile-menu-footer">
+          <div class="mobile-lang">
+            <button class="lb on" data-l="fr" type="button">FR</button>
+            <button class="lb"    data-l="en" type="button">EN</button>
+          </div>
+          <button class="theme-btn" id="themeToggleMobile" aria-label="Basculer le thème">
+            <span class="theme-icon-m">🌙</span>
+          </button>
         </div>
-    </section>
-    <section id="contact">
-        <div class="container">
-            <div class="divider white"></div>
-            <div class="heading">
-                <h2>Contact</h2>
-            </div>
-            <div id="message-confirmation" class="alert alert-success text-center" style="display: none;">
-                Merci pour votre message ! Je vous répondrai bientôt.
-            </div>
-            <div class="envelope">
-                <div class="contact_form">
-                    <span class="reset">x</span>
-                    <form action="https://formsubmit.co/63dcccd0f3415832761d8b3c6851b744" method="POST">
-                        <fieldset>
-                            <div class="form_row">
-                                <div class="form_part">
-                                    <label for="prenom">Prénom</label>
-                                    <input type="text" id="prenom" name="prenom"
-                                        placeholder="Veuillez saisir votre prénom" required>
-                                </div>
-                                <div class="form_part">
-                                    <label for="nom">Nom</label>
-                                    <input type="text" id="nom" name="nom" placeholder="Veuillez saisir votre nom"
-                                        required>
-                                </div>
-                            </div>
-                            <div class="form_part">
-                                <label for="email">Adresse courriel</label>
-                                <input type="email" id="email" name="email"
-                                    placeholder="Veuillez saisir votre adresse courriel" required>
-                            </div>
-                            <div class="form_part">
-                                <label for="pays">Pays</label>
-                                <input type="text" id="pays" name="pays" list="countries"
-                                    placeholder="Veuillez saisir votre pays">
-                                <datalist id="countries">
-                                    <option value="Afghanistan">
-                                    <option value="Afrique du Sud">
-                                    <option value="Albanie">
-                                    <option value="Algérie">
-                                    <option value="Allemagne">
-                                    <option value="Andorre">
-                                    <option value="Angola">
-                                    <option value="Arabie Saoudite">
-                                    <option value="Argentine">
-                                    <option value="Arménie">
-                                    <option value="Australie">
-                                    <option value="Autriche">
-                                    <option value="Azerbaïdjan">
-                                    <option value="Bahamas">
-                                    <option value="Bahreïn">
-                                    <option value="Bangladesh">
-                                    <option value="Barbade">
-                                    <option value="Belgique">
-                                    <option value="Belize">
-                                    <option value="Bénin">
-                                    <option value="Bhoutan">
-                                    <option value="Biélorussie">
-                                    <option value="Birmanie">
-                                    <option value="Bolivie">
-                                    <option value="Bosnie-Herzégovine">
-                                    <option value="Botswana">
-                                    <option value="Brésil">
-                                    <option value="Brunei">
-                                    <option value="Bulgarie">
-                                    <option value="Burkina Faso">
-                                    <option value="Burundi">
-                                    <option value="Cambodge">
-                                    <option value="Cameroun">
-                                    <option value="Canada">
-                                    <option value="Cap-Vert">
-                                    <option value="Chili">
-                                    <option value="Chine">
-                                    <option value="Chypre">
-                                    <option value="Colombie">
-                                    <option value="Comores">
-                                    <option value="Congo (Brazzaville)">
-                                    <option value="Congo (Kinshasa)">
-                                    <option value="Corée du Nord">
-                                    <option value="Corée du Sud">
-                                    <option value="Costa Rica">
-                                    <option value="Côte d'Ivoire">
-                                    <option value="Croatie">
-                                    <option value="Cuba">
-                                    <option value="Danemark">
-                                    <option value="Djibouti">
-                                    <option value="Dominique">
-                                    <option value="Égypte">
-                                    <option value="Émirats Arabes Unis">
-                                    <option value="Équateur">
-                                    <option value="Érythrée">
-                                    <option value="Espagne">
-                                    <option value="Estonie">
-                                    <option value="Eswatini">
-                                    <option value="États-Unis">
-                                    <option value="Éthiopie">
-                                    <option value="Fidji">
-                                    <option value="Finlande">
-                                    <option value="France">
-                                    <option value="Gabon">
-                                    <option value="Gambie">
-                                    <option value="Géorgie">
-                                    <option value="Ghana">
-                                    <option value="Grèce">
-                                    <option value="Grenade">
-                                    <option value="Guatemala">
-                                    <option value="Guinée">
-                                    <option value="Guinée-Bissau">
-                                    <option value="Guinée équatoriale">
-                                    <option value="Guyana">
-                                    <option value="Haïti">
-                                    <option value="Honduras">
-                                    <option value="Hongrie">
-                                    <option value="Inde">
-                                    <option value="Indonésie">
-                                    <option value="Irak">
-                                    <option value="Iran">
-                                    <option value="Irlande">
-                                    <option value="Islande">
-                                    <option value="Israël">
-                                    <option value="Italie">
-                                    <option value="Jamaïque">
-                                    <option value="Japon">
-                                    <option value="Jordanie">
-                                    <option value="Kazakhstan">
-                                    <option value="Kenya">
-                                    <option value="Kirghizistan">
-                                    <option value="Kiribati">
-                                    <option value="Kosovo">
-                                    <option value="Koweït">
-                                    <option value="Laos">
-                                    <option value="Lesotho">
-                                    <option value="Lettonie">
-                                    <option value="Liban">
-                                    <option value="Libéria">
-                                    <option value="Libye">
-                                    <option value="Liechtenstein">
-                                    <option value="Lituanie">
-                                    <option value="Luxembourg">
-                                    <option value="Macédoine du Nord">
-                                    <option value="Madagascar">
-                                    <option value="Malaisie">
-                                    <option value="Malawi">
-                                    <option value="Maldives">
-                                    <option value="Mali">
-                                    <option value="Malte">
-                                    <option value="Maroc">
-                                    <option value="Maurice">
-                                    <option value="Mauritanie">
-                                    <option value="Mexique">
-                                    <option value="Micronésie">
-                                    <option value="Moldavie">
-                                    <option value="Monaco">
-                                    <option value="Mongolie">
-                                    <option value="Monténégro">
-                                    <option value="Mozambique">
-                                    <option value="Namibie">
-                                    <option value="Nauru">
-                                    <option value="Népal">
-                                    <option value="Nicaragua">
-                                    <option value="Niger">
-                                    <option value="Nigéria">
-                                    <option value="Norvège">
-                                    <option value="Nouvelle-Zélande">
-                                    <option value="Oman">
-                                    <option value="Ouganda">
-                                    <option value="Ouzbékistan">
-                                    <option value="Pakistan">
-                                    <option value="Palaos">
-                                    <option value="Palestine">
-                                    <option value="Panama">
-                                    <option value="Papouasie-Nouvelle-Guinée">
-                                    <option value="Paraguay">
-                                    <option value="Pays-Bas">
-                                    <option value="Pérou">
-                                    <option value="Philippines">
-                                    <option value="Pologne">
-                                    <option value="Portugal">
-                                    <option value="Qatar">
-                                    <option value="République Centrafricaine">
-                                    <option value="République Tchèque">
-                                    <option value="Roumanie">
-                                    <option value="Royaume-Uni">
-                                    <option value="Russie">
-                                    <option value="Rwanda">
-                                    <option value="Saint-Kitts-et-Nevis">
-                                    <option value="Saint-Marin">
-                                    <option value="Saint-Vincent-et-les-Grenadines">
-                                    <option value="Sainte-Lucie">
-                                    <option value="Salomon">
-                                    <option value="Salvador">
-                                    <option value="Samoa">
-                                    <option value="São Tomé-et-Principe">
-                                    <option value="Sénégal">
-                                    <option value="Serbie">
-                                    <option value="Seychelles">
-                                    <option value="Sierra Leone">
-                                    <option value="Singapour">
-                                    <option value="Slovaquie">
-                                    <option value="Slovénie">
-                                    <option value="Somalie">
-                                    <option value="Soudan">
-                                    <option value="Soudan du Sud">
-                                    <option value="Sri Lanka">
-                                    <option value="Suède">
-                                    <option value="Suisse">
-                                    <option value="Suriname">
-                                    <option value="Syrie">
-                                    <option value="Tadjikistan">
-                                    <option value="Tanzanie">
-                                    <option value="Tchad">
-                                    <option value="Thaïlande">
-                                    <option value="Timor oriental">
-                                    <option value="Togo">
-                                    <option value="Tonga">
-                                    <option value="Trinité-et-Tobago">
-                                    <option value="Tunisie">
-                                    <option value="Turkménistan">
-                                    <option value="Turquie">
-                                    <option value="Tuvalu">
-                                    <option value="Ukraine">
-                                    <option value="Uruguay">
-                                    <option value="Vanuatu">
-                                    <option value="Vatican">
-                                    <option value="Venezuela">
-                                    <option value="Vietnam">
-                                    <option value="Yémen">
-                                    <option value="Zambie">
-                                    <option value="Zimbabwe">
-                                </datalist>
-                            </div>
-                            <div class="form_part">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" placeholder="Veuillez saisir votre message"
-                                    required></textarea>
-                            </div>
-                            <input type="hidden" name="_subject" value="Nouveau message depuis ton portfolio !">
-                            <input type="hidden" name="_next"
-                                value="https://jonathan-dev001.github.io/portfolio/?success=1#contact">
-                            <input type="hidden" name="_autoresponse"
-                                value="Merci pour votre message ! Je vous répondrai dans les plus brefs délais.">
-                            <input type="hidden" name="_captcha" value="false">
-                            <input type="text" name="_honey" style="display:none">
-                            <div class="text-center mt-4">
-                                <button type="submit" class="send_me mx-auto">Envoyer</button>
-                            </div>
-                        </fieldset>
-                    </form>
-                </div>
-                <p class="contact_me">Écris-moi</p>
-                <p class="thanks">MERCI</p>
-                <span class="top_flap close_sesame"></span>
-                <span class="side_flaps"></span>
-                <span class="bottom_flap"></span>
-            </div>
-        </div>
-    </section>
-    <div class="modal fade" id="proj2-video" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content bg-black border-0">
-                <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
-                    data-bs-dismiss="modal" aria-label="Fermer"></button>
-
-                <video id="proj2-player" onplay="this.playbackRate=0.35" controls playsinline preload="metadata"
-                    class="w-100 h-100" style="object-fit:contain;background:#000"
-                    poster="images/projets/portail-informatique-poster.jpg">
-                    <source src="images/demo.mp4?v=1" type="video/mp4">
-                    Votre navigateur ne supporte pas la vidéo HTML5.
-                </video>
-            </div>
-        </div>
+      </div>
     </div>
+  </nav>
 
-    <script src="js/contact.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 1000,
-            once: false,
-            easing: 'ease-in-out'
-        });
-    </script>
-    <script src="js/script.js"></script>
-    <script>
-        $(document).ready(function () {
-            const sections = $("section");
-            const navLinks = $(".nav-link");
-            $(window).on("scroll", function () {
-                let currentScroll = $(this).scrollTop() + 150;
-                sections.each(function () {
-                    const top = $(this).offset().top;
-                    const bottom = top + $(this).outerHeight();
-                    if (currentScroll >= top && currentScroll <= bottom) {
-                        const id = $(this).attr("id");
-                        navLinks.removeClass("active");
-                        $('.nav-link[href="#' + id + '"]').addClass("active");
-                    }
-                });
-            });
-        });
-    </script>
+  <main id="main">
+
+    <!-- ================================================================
+         HTML SECTION : HERO
+    ================================================================ -->
+    <!-- HERO -->
+    <section class="sec hero" id="accueil">
+      <div class="sec-content hero-grid">
+        <div class="hero-left">
+          <div class="eyebrow h-anim h-anim-1">
+            <span class="bd"></span>
+            <span data-fr="Développeur full-stack · Montréal · Freelance & opportunités CDI"
+                  data-en="Full-stack developer · Montreal · Freelance & full-time opportunities">Développeur full-stack · Montréal · Freelance & opportunités CDI</span>
+          </div>
+          <h1 class="h-anim h-anim-2">
+            <span class="soft" data-fr="CODE. DESIGN." data-en="CODE. DESIGN.">CODE. DESIGN.</span><br />
+            <span class="accent" data-fr="RÉSULTATS." data-en="RESULTS.">RÉSULTATS.</span>
+          </h1>
+          <p class="lead h-anim h-anim-3">
+            <strong data-fr="Je développe des sites et des applications web simples, solides et faciles à utiliser."
+                    data-en="I build simple, solid and easy-to-use websites and web applications.">Je développe des sites et des applications web simples, solides et faciles à utiliser.</strong>
+            <span data-fr=" Mon objectif n'est pas seulement que le produit fonctionne techniquement, mais qu'il soit clair pour les utilisateurs et utile pour l'entreprise. J'aime transformer un besoin concret en quelque chose de propre, structuré et maintenable dans le temps."
+                  data-en=" My goal is not just for the product to work technically, but to be clear for users and useful for the business. I love turning a concrete need into something clean, structured and maintainable over time."> Mon objectif n'est pas seulement que le produit fonctionne techniquement, mais qu'il soit clair pour les utilisateurs et utile pour l'entreprise. J'aime transformer un besoin concret en quelque chose de propre, structuré et maintenable dans le temps.</span>
+          </p>
+          <div class="hero-social h-anim h-anim-4">
+            <a href="https://github.com/jonathan-dev001" target="_blank" rel="noopener noreferrer" class="hs-link" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+              <span>GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/jonathan-herv%C3%A9-967159359" target="_blank" rel="noopener noreferrer" class="hs-link" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+          <div class="cta-row h-anim h-anim-5">
+            <a href="#fsForm" class="bp" data-fr="Discutons de votre idée" data-en="Let's talk about your idea">Discutons de votre idée</a>
+            <a href="https://jonathan-dev001.github.io/images/CV%20Jonathan.pdf" target="_blank" rel="noopener noreferrer" class="ghost" data-fr="Voir mon CV" data-en="View my resume">Voir mon CV</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel h-anim-panel" aria-label="Résumé professionnel">
+          <div class="hero-panel-top">
+            <span class="hero-chip">📍 Montréal</span>
+            <span class="hero-chip avail-chip">
+              <span class="avail-dot"></span>
+              <span data-fr="Disponible" data-en="Available">Disponible</span>
+            </span>
+          </div>
+
+          <p class="panel-label" data-fr="Ce que je construis" data-en="What I build">Ce que je construis</p>
+          <div class="proof-list">
+            <div class="proof-item">
+              <div class="proof-num">01</div>
+              <div>
+                <strong data-fr="Site web vitrine" data-en="Showcase website">Site web vitrine</strong>
+                <span data-fr="Design soigné, rapide, prêt à convertir." data-en="Clean design, fast, ready to convert.">Design soigné, rapide, prêt à convertir.</span>
+              </div>
+            </div>
+            <div class="proof-item">
+              <div class="proof-num">02</div>
+              <div>
+                <strong data-fr="Application web" data-en="Web application">Application web</strong>
+                <span data-fr="Angular + Spring Boot, du front au back." data-en="Angular + Spring Boot, front to back.">Angular + Spring Boot, du front au back.</span>
+              </div>
+            </div>
+            <div class="proof-item">
+              <div class="proof-num">03</div>
+              <div>
+                <strong data-fr="App Android" data-en="Android app">App Android</strong>
+                <span data-fr="Java, Kotlin ou Flutter selon le besoin." data-en="Java, Kotlin or Flutter as needed.">Java, Kotlin ou Flutter selon le besoin.</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- MINI-BAND -->
+
+
+    <!-- ================================================================
+         HTML SECTION : À PROPOS
+    ================================================================ -->
+    <!-- À PROPOS -->
+    <section class="sec" id="a-propos">
+      <div class="sec-content">
+        <div class="section-head">
+          <p class="etiq" data-fr="002 — Profil" data-en="002 — Profile">002 — Profil</p>
+          <h2 class="gt">
+            <span data-fr="QUI" data-en="WHO">QUI</span><br />
+            <em><span data-fr="JE SUIS." data-en="I AM.">JE SUIS.</span></em>
+          </h2>
+        </div>
+        <div class="about-grid">
+          <div class="card about-card">
+            <!-- FIX #7 : paragraphes avec <strong> séparés pour que le switch de langue fonctionne -->
+            <p>
+              <span data-fr="Je suis " data-en="I'm ">Je suis </span><strong>Jonathan Hervé</strong><span data-fr=", développeur full-stack basé à Montréal. J'ai commencé à coder sur un coup de tête — sans trop savoir où ça allait me mener. C'est quand j'ai vu mes premiers résultats à l'écran que j'ai compris que c'était fait pour moi."
+                    data-en=", a full-stack developer based in Montreal. I started coding on a whim — without really knowing where it would take me. When I saw my first results on screen, I knew this was for me.">, développeur full-stack basé à Montréal. J'ai commencé à coder sur un coup de tête — sans trop savoir où ça allait me mener. C'est quand j'ai vu mes premiers résultats à l'écran que j'ai compris que c'était fait pour moi.</span>
+            </p>
+            <p>
+              <span data-fr="J'ai étudié au Cégep de Rosemont en programmation web et mobile, où j'ai appris à construire de vraies applications de A à Z : l'interface, la logique côté serveur, les bases de données. Le genre de projets qui te forcent à résoudre des vrais problèmes."
+                    data-en="I studied web and mobile programming at Cégep de Rosemont, learning to build real apps from A to Z: the interface, server-side logic, databases — the kind of projects that force you to solve real problems.">J'ai étudié au Cégep de Rosemont en programmation web et mobile, où j'ai appris à construire de vraies applications de A à Z : l'interface, la logique côté serveur, les bases de données. Le genre de projets qui te forcent à résoudre des vrais problèmes.</span>
+            </p>
+            <p>
+              <span data-fr="En dehors du code, je joue aux jeux vidéo et je fais du sport. Les deux m'apprennent la même chose : la patience et la discipline de rester dans un problème jusqu'à ce qu'il soit résolu."
+                    data-en="Outside of code, I play video games and do sports. Both teach me the same thing: the patience and discipline to stay with a problem until it's solved.">En dehors du code, je joue aux jeux vidéo et je fais du sport. Les deux m'apprennent la même chose : la patience et la discipline de rester dans un problème jusqu'à ce qu'il soit résolu.</span>
+            </p>
+            <p>
+              <span data-fr="Ce qui me motive vraiment ? La satisfaction après avoir résolu quelque chose de compliqué. Quand le code fait enfin ce qu'il est censé faire — ce moment-là ne vieillit jamais."
+                    data-en="What really motivates me? The satisfaction after solving something tricky. When the code finally does what it's supposed to — that feeling never gets old.">Ce qui me motive vraiment ? La satisfaction après avoir résolu quelque chose de compliqué. Quand le code fait enfin ce qu'il est censé faire — ce moment-là ne vieillit jamais.</span>
+            </p>
+            <div class="about-actions">
+              <a href="https://jonathan-dev001.github.io/images/CV%20Jonathan.pdf" target="_blank" rel="noopener noreferrer" class="cvl"
+                 data-fr="Télécharger mon CV" data-en="Download my resume">Télécharger mon CV</a>
+              <a href="#contact" class="ghost" data-fr="Me contacter" data-en="Contact me">Me contacter</a>
+            </div>
+          </div>
+          <div class="facts">
+            <div class="card fact fade-up">
+              <strong data-count="12" data-suffix="+">12+</strong>
+              <span data-fr="Langages et frameworks maîtrisés : Angular, Spring Boot, Java, SQL, JS, Android…"
+                    data-en="Languages and frameworks: Angular, Spring Boot, Java, SQL, JS, Android…">Langages et frameworks maîtrisés : Angular, Spring Boot, Java, SQL, JS, Android…</span>
+            </div>
+            <div class="card fact fade-up">
+              <strong class="no-count">Full-Stack</strong>
+              <span data-fr="Capacité à connecter interface, API, logique métier et base de données."
+                    data-en="Ability to connect interface, API, business logic and database work.">Capacité à connecter interface, API, logique métier et base de données.</span>
+            </div>
+            <div class="card fact fade-up">
+              <strong data-count="100" data-suffix="%">100%</strong>
+              <span data-fr="Investi dans chaque projet — du premier commit au livrable final."
+                    data-en="Committed to every project — from the first commit to the final deliverable.">Investi dans chaque projet — du premier commit au livrable final.</span>
+            </div>
+          </div>
+        </div>
+        <div class="split-highlight">
+          <div class="card highlight-card fade-up">
+            <h3 data-fr="Pour un client freelance" data-en="For a freelance client">Pour un client freelance</h3>
+            <p data-fr="Je ne livre pas juste quelque chose de beau. Je construis un truc qui remplit son rôle : attirer, convaincre, convertir."
+               data-en="I don't just deliver something good-looking. I build something that does its job: attract, convince, convert.">Je ne livre pas juste quelque chose de beau. Je construis un truc qui remplit son rôle : attirer, convaincre, convertir.</p>
+            <div class="bullet-list">
+              <div class="bullet"><i></i><span data-fr="Un site qui donne envie de rester et de passer à l'action." data-en="A site that makes visitors want to stay and take action.">Un site qui donne envie de rester et de passer à l'action.</span></div>
+              <div class="bullet"><i></i><span data-fr="Un design plus soigné qui reflète mieux la valeur de ce que tu vends." data-en="A more polished design that better reflects the value of what you sell.">Un design plus soigné qui reflète mieux la valeur de ce que tu vends.</span></div>
+              <div class="bullet"><i></i><span data-fr="Communication directe : je t'explique ce que je fais et pourquoi." data-en="Direct communication: I explain what I'm doing and why.">Communication directe : je t'explique ce que je fais et pourquoi.</span></div>
+            </div>
+          </div>
+          <div class="card highlight-card fade-up">
+            <h3 data-fr="Pour un recruteur" data-en="For a recruiter">Pour un recruteur</h3>
+            <p data-fr="Stack solide, apprentissage rapide, bonne intégration en équipe. Le portfolio parle par lui-même."
+               data-en="Solid stack, fast learner, good team fit. The portfolio speaks for itself.">Stack solide, apprentissage rapide, bonne intégration en équipe. Le portfolio parle par lui-même.</p>
+            <div class="bullet-list">
+              <div class="bullet"><i></i><span data-fr="Frontend : Angular, HTML/CSS/JS — interfaces propres et responsives." data-en="Frontend: Angular, HTML/CSS/JS — clean and responsive interfaces.">Frontend : Angular, HTML/CSS/JS — interfaces propres et responsives.</span></div>
+              <div class="bullet"><i></i><span data-fr="Backend : Spring Boot, Java EE, SQL — API solides et bien structurées." data-en="Backend: Spring Boot, Java EE, SQL — solid and well-structured APIs.">Backend : Spring Boot, Java EE, SQL — API solides et bien structurées.</span></div>
+              <div class="bullet"><i></i><span data-fr="J'apprends vite et je m'adapte — Git, revues de code, travail en équipe." data-en="Fast learner and adaptable — Git, code reviews, teamwork.">J'apprends vite et je m'adapte — Git, revues de code, travail en équipe.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         HTML SECTION : SERVICES
+    ================================================================ -->
+    <!-- SERVICES -->
+    <section class="sec" id="services">
+      <div class="sec-content">
+        <div class="section-head center">
+          <p class="etiq" data-fr="003 — Services" data-en="003 — Services">003 — Services</p>
+          <!-- FIX #5 : data-fr corrigé pour correspondre au texte affiché -->
+          <h2 class="gt">
+            <span data-fr="CE QUE JE PEUX FAIRE" data-en="WHAT I CAN DO">CE QUE JE PEUX FAIRE</span><br />
+            <em><span data-fr="POUR VOTRE PROJET." data-en="FOR YOUR PROJECT.">POUR VOTRE PROJET.</span></em>
+          </h2>
+          <p class="section-sub"
+             data-fr="Chaque offre est pensée pour une vraie utilité business : meilleure image, meilleure lisibilité, meilleure conversion et meilleure base technique pour la suite."
+             data-en="Each service is designed for real business value: stronger image, clearer messaging, better conversion and a better technical foundation for what comes next.">Chaque offre est pensée pour une vraie utilité business : meilleure image, meilleure lisibilité, meilleure conversion et meilleure base technique pour la suite.</p>
+        </div>
+        <div class="service-grid">
+          <article class="card service-card fade-up">
+            <div class="service-top"><span class="service-no">01</span><span class="service-icon">✦</span></div>
+            <h3 data-fr="Site vitrine premium" data-en="Premium showcase website">Site vitrine premium</h3>
+            <p data-fr="Pour entreprises, indépendants ou marques qui veulent inspirer confiance dès les premières secondes. Design plus sérieux, structure plus lisible, message plus fort."
+               data-en="For businesses, independents or brands that want to inspire trust from the first seconds. More serious design, clearer structure, stronger message.">Pour entreprises, indépendants ou marques qui veulent inspirer confiance dès les premières secondes. Design plus sérieux, structure plus lisible, message plus fort.</p>
+            <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag" data-fr="Conversion" data-en="Conversion">Conversion</span></div>
+          </article>
+          <article class="card service-card fade-up">
+            <div class="service-top"><span class="service-no">02</span><span class="service-icon">⚙</span></div>
+            <h3 data-fr="Application web métier" data-en="Business web application">Application web métier</h3>
+            <p data-fr="Portails, tableaux de bord, outils internes et workflows métiers avec Angular, Spring Boot et SQL. Une architecture claire pour pouvoir maintenir et faire évoluer le produit."
+               data-en="Portals, dashboards, internal tools and business workflows with Angular, Spring Boot and SQL. A clear architecture built to be maintained and scaled.">Portails, tableaux de bord, outils internes et workflows métiers avec Angular, Spring Boot et SQL. Une architecture claire pour pouvoir maintenir et faire évoluer le produit.</p>
+            <div class="tags"><span class="tag">Angular</span><span class="tag">Spring Boot</span><span class="tag">Java</span><span class="tag">SQL</span></div>
+          </article>
+          <article class="card service-card fade-up">
+            <div class="service-top"><span class="service-no">03</span><span class="service-icon">▣</span></div>
+            <h3 data-fr="Profil développeur prêt équipe" data-en="Team-ready developer profile">Profil développeur prêt équipe</h3>
+            <p data-fr="Au-delà du freelance, je suis également ouvert à rejoindre une équipe produit ou technique. J'apporte une vision propre du code, une bonne communication et une logique orientée résultat."
+               data-en="Beyond freelance work, I am also open to joining a product or technical team. I bring clean code thinking, good communication and a result-oriented mindset.">Au-delà du freelance, je suis également ouvert à rejoindre une équipe produit ou technique. J'apporte une vision propre du code, une bonne communication et une logique orientée résultat.</p>
+            <div class="tags"><span class="tag">Git</span><span class="tag">API REST</span><span class="tag">Clean code</span><span class="tag" data-fr="Collaboration" data-en="Collaboration">Collaboration</span></div>
+          </article>
+        </div>
+
+        <!-- TARIFS -->
+        <div class="pricing-row">
+          <p class="pricing-note" data-fr="💡 Chaque projet est unique — voici des fourchettes indicatives pour vous aider à planifier." data-en="💡 Every project is unique — here are indicative ranges to help you plan.">💡 Chaque projet est unique — voici des fourchettes indicatives pour vous aider à planifier.</p>
+          <div class="pricing-cards">
+            <div class="pricing-card">
+              <div class="pricing-label" data-fr="Site vitrine" data-en="Showcase site">Site vitrine</div>
+              <div class="pricing-price" data-fr="à partir de 1 200 $" data-en="from $1,200">à partir de 1 200 $</div>
+              <div class="pricing-sub" data-fr="Ex. : page de présentation pour un restaurant, un salon ou un service local." data-en="Ex.: presentation page for a restaurant, salon, or local business.">Ex. : page de présentation pour un restaurant, un salon ou un service local.</div>
+            </div>
+            <div class="pricing-card pricing-card-mid">
+              <div class="pricing-badge" data-fr="Le plus demandé" data-en="Most popular">Le plus demandé</div>
+              <div class="pricing-label" data-fr="Application web" data-en="Web app">Application web</div>
+              <div class="pricing-price" data-fr="à partir de 3 500 $" data-en="from $3,500">à partir de 3 500 $</div>
+              <div class="pricing-sub" data-fr="Ex. : portail client, système de réservation ou tableau de bord avec connexion et base de données." data-en="Ex.: client portal, booking system, or dashboard with login and database.">Ex. : portail client, système de réservation ou tableau de bord avec connexion et base de données.</div>
+            </div>
+            <div class="pricing-card">
+              <div class="pricing-label" data-fr="Sur mesure / équipe" data-en="Custom / team">Sur mesure / équipe</div>
+              <div class="pricing-price" data-fr="Sur devis" data-en="On quote">Sur devis</div>
+              <div class="pricing-sub" data-fr="Ex. : application multi-rôles, intégration API tierce, ou rejoindre une équipe en tant que développeur." data-en="Ex.: multi-role app, third-party API integration, or joining a team as a developer.">Ex. : application multi-rôles, intégration API tierce, ou rejoindre une équipe en tant que développeur.</div>
+            </div>
+          </div>
+          <div class="pricing-cta">
+            <a href="#contact" class="bp" style="font-size:13px;padding:0 22px;min-height:46px;" data-fr="Obtenir un devis gratuit" data-en="Get a free quote">Obtenir un devis gratuit</a>
+            <a href="https://www.paypal.com/paypalme/JonathanHerve01" target="_blank" rel="noopener noreferrer" class="paypal-btn" aria-label="Soutenir ou payer via PayPal">
+<svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true"><path d="M6.5 21.5l.9-5.7h-2.1L7.4 2h8c2.3 0 4 .5 4.9 1.5.9 1 1.1 2.2.7 3.8-.4 1.7-1.1 3-2.2 3.9-1.1.9-2.5 1.3-4.2 1.3H12l-1.1 7H6.5zm6.1-10.5c.8 0 1.5-.2 2-.7.5-.5.9-1.2 1.1-2.1.2-.9.1-1.6-.3-2-.4-.4-1-.6-1.9-.6h-2l-1.1 5.4h2.2z"/></svg>
+              <span data-fr="Soutenir / Payer via PayPal" data-en="Support / Pay via PayPal">Soutenir / Payer via PayPal</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         HTML SECTION : PROJETS
+    ================================================================ -->
+    <!-- PROJETS -->
+    <section class="sec" id="projets">
+      <div class="sec-content">
+        <div class="section-head center">
+          <p class="etiq" data-fr="004 — Projets" data-en="004 — Projects">004 — Projets</p>
+          <h2 class="gt">
+            <span data-fr="CE QUE J'AI" data-en="WHAT I'VE">CE QUE J'AI</span><br />
+            <em><span data-fr="CONSTRUIT." data-en="BUILT.">CONSTRUIT.</span></em>
+          </h2>
+          <p class="section-sub"
+             data-fr="Quelques projets qui montrent comment je structure une application et comment je transforme une idée en produit web fonctionnel."
+             data-en="A selection that shows my ability to craft cleaner, stronger and more user-focused web experiences.">Quelques projets qui montrent comment je structure une application et comment je transforme une idée en produit web fonctionnel.</p>
+        </div>
+        <div class="project-list">
+          <a href="https://jon-rental-car.netlify.app" target="_blank" rel="noopener noreferrer" class="card project">
+            <div class="project-type" data-fr="Application web" data-en="Web application">Application web</div>
+            <div>
+              <div class="project-title">Jon Rental Car</div>
+              <div class="project-desc"
+                   data-fr="Prototype d'application de location de voitures développé en HTML, CSS et JavaScript. Les véhicules et les données sont simulés localement pour reproduire le fonctionnement d'un vrai service : catalogue, sélection de véhicule et logique d'interaction côté interface."
+                   data-en="Car rental prototype built with HTML, CSS and JavaScript. Vehicles and data are simulated locally to reproduce the behavior of a real service: catalogue, vehicle selection and client-side interaction logic.">Prototype d'application de location de voitures développé en HTML, CSS et JavaScript. Les véhicules et les données sont simulés localement pour reproduire le fonctionnement d'un vrai service : catalogue, sélection de véhicule et logique d'interaction côté interface.</div>
+              <div class="project-stack">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                <span data-fr="Données simulées" data-en="Simulated data">Données simulées</span>
+                <span data-fr="Logique côté client" data-en="Client-side logic">Logique côté client</span>
+              </div>
+            </div>
+            <div class="project-arrow">↗</div>
+          </a>
+          <article class="card project is-muted">
+            <div class="project-type">Full-Stack</div>
+            <div>
+              <div class="project-title">Portail Informatique <span class="pill" data-fr="En cours" data-en="In progress">En cours</span></div>
+              <div class="project-desc"
+                   data-fr="Gestion de cours, travaux et notes pour étudiants, enseignants et entreprises partenaires. Projet structurant qui met en avant une logique multi-rôles, métier et base de données."
+                   data-en="Management of courses, assignments and grades for students, teachers and partner companies. A structuring project highlighting multi-role logic, business rules and database work.">Gestion de cours, travaux et notes pour étudiants, enseignants et entreprises partenaires. Projet structurant qui met en avant une logique multi-rôles, métier et base de données.</div>
+              <div class="project-stack">
+                <span>Angular</span><span>Spring Boot</span><span>Java</span><span>SQL</span>
+                <span data-fr="Gestion multi-rôles" data-en="Multi-role management">Gestion multi-rôles</span>
+              </div>
+            </div>
+            <div class="project-arrow">⏳</div>
+          </article>
+          <a href="#contact" class="card project is-coming">
+            <div class="project-type" data-fr="Prochaine mission" data-en="Next mission">Prochaine mission</div>
+            <div>
+              <div class="project-title" data-fr="Votre projet peut être ici" data-en="Your project can be here">Votre projet peut être ici</div>
+              <div class="project-desc"
+                   data-fr="Refonte d'image, site premium, application métier ou intégration dans une équipe de développement : je suis disponible pour un nouveau défi."
+                   data-en="Brand refresh, premium website, business app or integration into a development team: I'm available for the next challenge.">Refonte d'image, site premium, application métier ou intégration dans une équipe de développement : je suis disponible pour un nouveau défi.</div>
+              <div class="project-stack">
+                <span data-fr="Site vitrine"      data-en="Website">Site vitrine</span>
+                <span data-fr="Application web"   data-en="Web application">Application web</span>
+                <span data-fr="Freelance"          data-en="Freelance">Freelance</span>
+                <span data-fr="Mission technique"  data-en="Technical mission">Mission technique</span>
+              </div>
+            </div>
+            <div class="project-arrow">→</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         HTML SECTION : COMPÉTENCES
+    ================================================================ -->
+    <!-- STACK — FIX #4 : "LISIBLE" corrigé -->
+    <section class="sec" id="stack">
+      <div class="sec-content">
+        <div class="section-head center">
+          <p class="etiq" data-fr="005 — Compétences" data-en="005 — Skills">005 — Compétences</p>
+          <h2 class="gt" style="text-align:center;">
+            <span data-fr="UNE BASE" data-en="A SOLID">UNE BASE</span><br />
+            <em><span data-fr="SOLIDE." data-en="BASE.">SOLIDE.</span></em>
+          </h2>
+          <p class="section-sub"
+             data-fr="Un ensemble cohérent pour concevoir des interfaces sérieuses, des APIs robustes et des applications plus fiables."
+             data-en="A coherent set of skills to design serious interfaces, robust APIs and more reliable applications.">Un ensemble cohérent pour concevoir des interfaces sérieuses, des APIs robustes et des applications plus fiables.</p>
+        </div>
+        <div class="stack-grid">
+          <div class="card stack-card" data-w=".88"><div class="stack-top"><span class="stack-name">HTML / CSS</span><span class="stack-score">88%</span></div><div class="bar"><div class="fill"></div></div></div>
+          <div class="card stack-card" data-w=".76"><div class="stack-top"><span class="stack-name">JavaScript</span><span class="stack-score">76%</span></div><div class="bar"><div class="fill"></div></div></div>
+          <div class="card stack-card" data-w=".82"><div class="stack-top"><span class="stack-name">Angular</span><span class="stack-score">82%</span></div><div class="bar"><div class="fill"></div></div></div>
+          <div class="card stack-card" data-w=".85"><div class="stack-top"><span class="stack-name">Spring Boot</span><span class="stack-score">85%</span></div><div class="bar"><div class="fill"></div></div></div>
+          <div class="card stack-card" data-w=".84"><div class="stack-top"><span class="stack-name">Java / Java EE</span><span class="stack-score">84%</span></div><div class="bar"><div class="fill"></div></div></div>
+          <div class="card stack-card" data-w=".90"><div class="stack-top"><span class="stack-name">SQL</span><span class="stack-score">90%</span></div><div class="bar"><div class="fill"></div></div></div>
+          <div class="card stack-card" data-w=".44"><div class="stack-top"><span class="stack-name">React</span><span class="stack-score">44%</span></div><div class="bar"><div class="fill"></div></div></div>
+          <div class="card stack-card" data-w=".74"><div class="stack-top"><span class="stack-name">Android</span><span class="stack-score">74%</span></div><div class="bar"><div class="fill"></div></div></div>
+          <div class="card stack-card" data-w=".61"><div class="stack-top"><span class="stack-name">ASP.NET</span><span class="stack-score">61%</span></div><div class="bar"><div class="fill"></div></div></div>
+          <div class="card stack-card" data-w=".48"><div class="stack-top"><span class="stack-name">Python</span><span class="stack-score">48%</span></div><div class="bar"><div class="fill"></div></div></div>
+          <div class="card stack-card" data-w=".80"><div class="stack-top"><span class="stack-name">Git</span><span class="stack-score">80%</span></div><div class="bar"><div class="fill"></div></div></div>
+          <div class="card stack-card" data-w=".65"><div class="stack-top"><span class="stack-name">Unity / C#</span><span class="stack-score">65%</span></div><div class="bar"><div class="fill"></div></div></div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         HTML SECTION : PROCESSUS
+    ================================================================ -->
+    <!-- TÉMOIGNAGES -->
+    <section class="sec" id="temoignages">
+      <div class="sec-content">
+        <div class="section-head center">
+          <p class="etiq" data-fr="006 — Comment ça se passe" data-en="006 — How it works">006 — Comment ça se passe</p>
+          <h2 class="gt" style="text-align:center;">
+            <span data-fr="COMMENT" data-en="HOW WE">COMMENT</span><br />
+            <em><span data-fr="ON TRAVAILLE." data-en="WORK TOGETHER.">ON TRAVAILLE.</span></em>
+          </h2>
+
+        </div>
+
+        <div class="process-grid">
+          <div class="card process-card fade-up">
+            <div class="process-num">01</div>
+            <h3 data-fr="Tu remplis le formulaire" data-en="Fill out the form">Tu remplis le formulaire</h3>
+            <p data-fr="Dis-moi ce que tu as en tête : ton projet, ton budget et ce que tu attends. Plus tu m'en donnes, mieux je pourrai t'aider."
+               data-en="Tell me what you have in mind: your project, your budget and what you expect. The more you share, the better I can help.">Dis-moi ce que tu as en tête : ton projet, ton budget et ce que tu attends. Plus tu m'en donnes, mieux je pourrai t'aider.</p>
+          </div>
+          <div class="card process-card fade-up">
+            <div class="process-num">02</div>
+            <h3 data-fr="Je te réponds" data-en="I get back to you">Je te réponds</h3>
+            <p data-fr="Je lis ton message et je te reviens avec une réponse claire. On s'entend sur ce qu'on va faire et comment."
+               data-en="I read your message and get back to you with a clear answer. We agree on what we'll do and how.">Je lis ton message et je te reviens avec une réponse claire. On s'entend sur ce qu'on va faire et comment.</p>
+          </div>
+          <div class="card process-card fade-up">
+            <div class="process-num">03</div>
+            <h3 data-fr="Je travaille" data-en="I get to work">Je travaille</h3>
+            <p data-fr="Je développe ton projet et je te tiens au courant si nécessaire. T'as une question ? Tu m'écris."
+               data-en="I develop your project and keep you updated when needed. Got a question? Just message me.">Je développe ton projet et je te tiens au courant si nécessaire. T'as une question ? Tu m'écris.</p>
+          </div>
+          <div class="card process-card fade-up">
+            <div class="process-num">04</div>
+            <h3 data-fr="C'est à toi" data-en="It's yours">C'est à toi</h3>
+            <p data-fr="Tu reçois le résultat final. Si t'as des ajustements à faire ou des questions après, je suis encore disponible."
+               data-en="You get the final result. If you need adjustments or have questions after, I'm still available.">Tu reçois le résultat final. Si t'as des ajustements à faire ou des questions après, je suis encore disponible.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================================================
+         HTML SECTION : CONTACT
+    ================================================================ -->
+    <!-- CONTACT -->
+    <section class="sec" id="contact">
+      <div class="sec-content">
+        <div class="contact-wrap">
+
+          <p class="etiq" data-fr="007 — Contact" data-en="007 — Contact">007 — Contact</p>
+          <h2 class="contact-headline">
+            <span data-fr="PARLONS" data-en="LET'S TALK">PARLONS</span>
+            <span class="cl-fade" data-fr="VOTRE PROJET" data-en="ABOUT YOUR">DE VOTRE PROJET</span>
+            <span class="cl-gold" data-fr="ENSEMBLE." data-en="PROJECT.">ENSEMBLE.</span>
+          </h2>
+          <p class="contact-sub"
+             data-fr="Un projet, une idée ou une opportunité ? Je vous réponds dans les 24 à 48h."
+             data-en="A project, an idea or an opportunity? I reply within 24 to 48 hours.">Un projet, une idée ou une opportunité ? Je vous réponds dans les 24 à 48h.</p>
+
+          <div class="contact-card-wrap">
+            <!-- Cercles décoratifs -->
+            <div class="cf-circles" aria-hidden="true">
+              <div class="cf-c"></div>
+              <div class="cf-c"></div>
+              <div class="cf-c"></div>
+            </div>
+
+            <div class="contact-card-box">
+              <div class="contact-card-inner">
+
+                <!-- Formulaire -->
+                <form class="cform" id="contactForm"
+                      action="#" id="fsForm"
+                      method="POST">
+                  <input type="hidden" name="_captcha"      value="false" />
+                  <input type="hidden" name="_template"     value="table" />
+                  <input type="hidden" name="_subject"      value="Nouveau message depuis le portfolio !" />
+                  <input type="hidden" name="_next"         value="https://jonathan-dev001.github.io/portfolio/?success=1#contact" />
+                  <input type="hidden" name="_autoresponse" value="Merci pour votre message ! Je vous répondrai dans les plus brefs délais." />
+                  <input type="hidden" name="Budget"        id="budgetHidden" value="À discuter" />
+                  <input type="text"   name="_honey"        style="display:none" />
+
+                  <!-- Prénom + Nom -->
+                  <div class="cf-group">
+                    <label class="cf-label" for="cf-prenom" data-fr="Prénom *" data-en="First name *">Prénom *</label>
+                    <input class="cf-input" id="cf-prenom" name="Prénom" type="text" placeholder="Marie" required />
+                    <span class="cf-err" data-fr="Champ requis" data-en="Required field">Champ requis</span>
+                  </div>
+                  <div class="cf-group">
+                    <label class="cf-label" for="cf-nom" data-fr="Nom *" data-en="Last name *">Nom *</label>
+                    <input class="cf-input" id="cf-nom" name="Nom" type="text" placeholder="Tremblay" required />
+                    <span class="cf-err" data-fr="Champ requis" data-en="Required field">Champ requis</span>
+                  </div>
+
+                  <!-- Courriel -->
+                  <div class="cf-group full">
+                    <label class="cf-label" for="cf-email" data-fr="Courriel *" data-en="Email *">Courriel *</label>
+                    <input class="cf-input" id="cf-email" name="Courriel" type="email" placeholder="marie@entreprise.com" required />
+                    <span class="cf-err" data-fr="Courriel invalide" data-en="Invalid email">Courriel invalide</span>
+                  </div>
+
+                  <!-- Téléphone + Entreprise -->
+                  <div class="cf-group">
+                    <label class="cf-label" for="cf-tel" data-fr="Téléphone" data-en="Phone">Téléphone</label>
+                    <input class="cf-input" id="cf-tel" name="Téléphone" type="tel" placeholder="514-000-0000" />
+                  </div>
+                  <div class="cf-group">
+                    <label class="cf-label" for="cf-org" data-fr="Entreprise / Organisation" data-en="Company / Organization">Entreprise / Organisation</label>
+                    <input class="cf-input" id="cf-org" name="Entreprise" type="text" placeholder="Acme inc." />
+                  </div>
+
+                  <!-- Type de projet (select) -->
+                  <div class="cf-group full">
+                    <label class="cf-label" for="cf-type" data-fr="Type de projet" data-en="Project type">Type de projet</label>
+                    <select class="cf-select" id="cf-type" name="Type de projet">
+                      <option value="" data-fr="Choisir un type…" data-en="Choose a type…">Choisir un type…</option>
+                      <option value="Site vitrine" data-fr="Site vitrine" data-en="Showcase website">Site vitrine</option>
+                      <option value="Application web" data-fr="Application web" data-en="Web application">Application web</option>
+                      <option value="App Android" data-fr="App Android" data-en="Android app">App Android</option>
+                      <option value="API / Back-end" data-fr="API / Back-end" data-en="API / Back-end">API / Back-end</option>
+                      <option value="Opportunité développeur" data-fr="Opportunité développeur" data-en="Developer opportunity">Opportunité développeur</option>
+                      <option value="Autre" data-fr="Autre" data-en="Other">Autre</option>
+                    </select>
+                  </div>
+
+
+                  <!-- Slider budget -->
+                  <div class="cf-group full">
+                    <div class="budget-display">
+                      <label class="cf-label" data-fr="Budget estimé" data-en="Estimated budget">Budget estimé</label>
+                      <span class="budget-val" id="budgetVal">À discuter</span>
+                      <span class="budget-tag" id="budgetTag" data-fr="Pas encore défini" data-en="Not defined yet">Pas encore défini</span>
+                    </div>
+                    <input type="range" class="budget-slider" id="budgetSlider"
+                           min="0" max="5" step="1" value="1" />
+                    <div class="budget-marks">
+                      <span data-fr="À disc." data-en="TBD">À disc.</span>
+                      <span>1 200 $</span>
+                      <span>2 000 $</span>
+                      <span>3 500 $</span>
+                      <span>6 000 $</span>
+                      <span data-fr="Sur devis" data-en="On quote">Sur devis</span>
+                    </div>
+                  </div>
+
+                  <!-- Message -->
+                  <div class="cf-group full">
+                    <label class="cf-label" for="cf-msg" data-fr="Votre message *" data-en="Your message *">Votre message *</label>
+                    <textarea class="cf-textarea" id="cf-msg" name="Message" placeholder="Décrivez votre projet en détail : qu'est-ce que vous voulez construire, à qui ça s'adresse, ce que vous attendez du résultat final…" required minlength="10"></textarea>
+                    <span class="cf-err" data-fr="Message trop court (10 car. min)" data-en="Message too short (10 chars min)">Message trop court (10 car. min)</span>
+                  </div>
+
+                  <button class="cfbtn" type="submit"
+                          data-fr="Envoyer le message →"
+                          data-en="Send message →">Envoyer le message →</button>
+
+                  <div class="cf-success" id="formSuccess">
+                     <span data-fr="Message envoyé ! Je vous réponds dans les 24 à 48h."
+                           data-en="Message sent! I'll reply within 24 to 48 hours.">Message envoyé ! Je vous réponds dans les 24 à 48h.</span>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-wrap" style="justify-content:center;">
+      <span class="copy">© 2026 Jonathan Hervé — <span data-fr="Développeur full-stack" data-en="Full-stack developer">Développeur full-stack</span></span>
+    </div>
+  </footer>
+   <script src="script.js"></script>
 </body>
-
 </html>
