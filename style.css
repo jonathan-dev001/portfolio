@@ -1743,8 +1743,6 @@ input[type="range"].budget-slider::-moz-range-thumb {
   display: block;
 }
 
-/* Lien sous carte */
-
 /* Footer */
 footer {
   border-top: 1px solid var(--line);

@@ -284,6 +284,8 @@ document
 (function () {
   const form = document.getElementById("contactForm");
   const success = document.getElementById("formSuccess");
+  const btn = form ? form.querySelector(".cfbtn") : null;
+  const defaultBtnText = btn ? btn.textContent : "Envoyer le message →";
 
   form
     .querySelectorAll(".cf-input, .cf-select, .cf-textarea")
@@ -321,14 +323,16 @@ document
     const now = Date.now();
     if (now - lastSubmit < 8000) {
       e.preventDefault();
-      const btn = form.querySelector(".cfbtn");
       if (btn) {
         const remaining = Math.ceil((8000 - (now - lastSubmit)) / 1000);
-        btn.textContent = `Patientez ${remaining}s…`;
+        const isEn = document.documentElement.lang === "en";
+        btn.textContent = isEn
+          ? `Please wait ${remaining}s…`
+          : `Patientez ${remaining}s…`;
+
         setTimeout(
           () => {
-            btn.setAttribute("data-fr", "Envoyer le message →");
-            btn.textContent = "Envoyer le message →";
+            btn.textContent = defaultBtnText;
           },
           8000 - (now - lastSubmit),
         );
@@ -360,11 +364,13 @@ document
     }
 
     lastSubmit = now;
-    const btn = form.querySelector(".cfbtn");
-    if (btn) btn.textContent = "Envoi en cours…";
-    setTimeout(() => {
-      if (success) success.classList.add("show");
-    }, 400);
+    if (btn) {
+      btn.disabled = true;
+      btn.textContent =
+        document.documentElement.lang === "en"
+          ? "Sending..."
+          : "Envoi en cours…";
+    }
   });
 
   if (
@@ -372,5 +378,40 @@ document
     document.referrer.includes("formsubmit.co")
   ) {
     if (success) success.classList.add("show");
+
+    form.reset();
+
+    form.querySelectorAll(".cf-group").forEach((g) => {
+      g.classList.remove("has-error");
+    });
+
+    if (btn) {
+      btn.disabled = false;
+      btn.textContent = defaultBtnText;
+    }
+
+    const slider = document.getElementById("budgetSlider");
+    const budgetVal = document.getElementById("budgetVal");
+    const budgetTag = document.getElementById("budgetTag");
+    const budgetHidden = document.getElementById("budgetHidden");
+
+    if (slider && budgetVal && budgetTag && budgetHidden) {
+      slider.value = 0;
+      budgetVal.textContent = "À discuter";
+      budgetTag.textContent =
+        document.documentElement.lang === "en"
+          ? "Not defined yet"
+          : "Pas encore défini";
+      budgetHidden.value = "À discuter";
+      slider.style.setProperty("--pct", "0%");
+    }
+
+    if (window.history.replaceState) {
+      window.history.replaceState(
+        {},
+        document.title,
+        window.location.pathname + "#contact",
+      );
+    }
   }
 })();
