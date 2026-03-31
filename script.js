@@ -25,7 +25,6 @@
         : "dark",
     );
   }
-
   window
     .matchMedia("(prefers-color-scheme: light)")
     .addEventListener("change", (e) => {
@@ -42,11 +41,11 @@
   }
 })();
 
-// ---- 02. SÉCURITÉ : reconstruction email + form action ----
 (function () {
   const u = ["jonathan", "herve0502"].join("");
   const d = ["gmail", ".com"].join("");
   const em = u + "@" + d;
+
   const el = document.getElementById("emlLink");
   const tx = document.getElementById("emlTxt");
   if (el && tx) {
@@ -56,6 +55,7 @@
       window.location.href = "mailto:" + em;
     });
   }
+
   const ef = document.getElementById("emlFooter");
   if (ef) {
     ef.addEventListener("click", (e) => {
@@ -63,9 +63,13 @@
       window.location.href = "mailto:" + em;
     });
   }
+
+  const form = document.getElementById("fsForm");
+  if (form) {
+    form.action = "https://api.web3forms.com/submit";
+  }
 })();
 
-// ---- 03. NAV ----
 const nav = document.getElementById("nav");
 const menu = document.getElementById("menu");
 const menuToggle = document.getElementById("menuToggle");
@@ -75,7 +79,6 @@ menuToggle.addEventListener("click", () => {
   const open = mobileMenu.classList.toggle("open");
   menuToggle.setAttribute("aria-expanded", open);
   mobileMenu.setAttribute("aria-hidden", !open);
-
   menuToggle.classList.toggle("is-open", open);
 });
 
@@ -123,8 +126,8 @@ const ids = [
   "a-propos",
   "services",
   "projets",
-  "skills",
-  "processus",
+  "stack",
+  "temoignages",
   "contact",
 ];
 links.forEach((a) =>
@@ -267,7 +270,6 @@ document
     valEl.textContent = s.val;
     tagEl.textContent = isEn ? s.tagEn : s.tagFr;
     hiddenEl.value = s.val;
-
     const pct = (idx / (steps.length - 1)) * 100;
     slider.style.setProperty("--pct", pct + "%");
   }
@@ -279,13 +281,9 @@ document
     btn.addEventListener("click", () => setTimeout(updateBudget, 10));
   });
 })();
-
-// ---- 08. FORMULAIRE — validation client + envoi FormSubmit ----
 (function () {
   const form = document.getElementById("contactForm");
   const success = document.getElementById("formSuccess");
-  const btn = form ? form.querySelector(".cfbtn") : null;
-  const defaultBtnText = btn ? btn.textContent : "Envoyer le message →";
 
   form
     .querySelectorAll(".cf-input, .cf-select, .cf-textarea")
@@ -323,16 +321,14 @@ document
     const now = Date.now();
     if (now - lastSubmit < 8000) {
       e.preventDefault();
+      const btn = form.querySelector(".cfbtn");
       if (btn) {
         const remaining = Math.ceil((8000 - (now - lastSubmit)) / 1000);
-        const isEn = document.documentElement.lang === "en";
-        btn.textContent = isEn
-          ? `Please wait ${remaining}s…`
-          : `Patientez ${remaining}s…`;
-
+        btn.textContent = `Patientez ${remaining}s…`;
         setTimeout(
           () => {
-            btn.textContent = defaultBtnText;
+            btn.setAttribute("data-fr", "Envoyer le message →");
+            btn.textContent = "Envoyer le message →";
           },
           8000 - (now - lastSubmit),
         );
@@ -364,54 +360,67 @@ document
     }
 
     lastSubmit = now;
+    const btn = form.querySelector(".cfbtn");
+    const isEn = document.documentElement.lang === "en";
     if (btn) {
       btn.disabled = true;
-      btn.textContent =
-        document.documentElement.lang === "en"
-          ? "Sending..."
-          : "Envoi en cours…";
+      btn.textContent = isEn ? "Sending…" : "Envoi en cours…";
     }
+
+    e.preventDefault();
+    const formData = new FormData(form);
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    })
+      .then((r) => r.json())
+      .then((data) => {
+        if (data.success) {
+          if (success) success.classList.add("show");
+          form.reset();
+          form
+            .querySelectorAll(".cf-group")
+            .forEach((g) => g.classList.remove("has-error"));
+          if (btn) {
+            btn.disabled = false;
+            btn.textContent = isEn ? "Send message →" : "Envoyer le message →";
+          }
+
+          const slider = document.getElementById("budgetSlider");
+          const budgetVal = document.getElementById("budgetVal");
+          const budgetTag = document.getElementById("budgetTag");
+          const budgetHidden = document.getElementById("budgetHidden");
+          if (slider && budgetVal && budgetTag && budgetHidden) {
+            slider.value = 0;
+            budgetVal.textContent = "À discuter";
+            budgetTag.textContent = isEn
+              ? "Not defined yet"
+              : "Pas encore défini";
+            budgetHidden.value = "À discuter";
+            slider.style.setProperty("--pct", "0%");
+          }
+        } else {
+          if (btn) {
+            btn.disabled = false;
+            btn.textContent = isEn ? "Send message →" : "Envoyer le message →";
+          }
+          alert(
+            isEn
+              ? "An error occurred. Please try again."
+              : "Une erreur est survenue. Veuillez réessayer.",
+          );
+        }
+      })
+      .catch(() => {
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = isEn ? "Send message →" : "Envoyer le message →";
+        }
+        alert(
+          isEn
+            ? "An error occurred. Please try again."
+            : "Une erreur est survenue. Veuillez réessayer.",
+        );
+      });
   });
-
-  if (
-    window.location.search.includes("success") ||
-    document.referrer.includes("formsubmit.co")
-  ) {
-    if (success) success.classList.add("show");
-
-    form.reset();
-
-    form.querySelectorAll(".cf-group").forEach((g) => {
-      g.classList.remove("has-error");
-    });
-
-    if (btn) {
-      btn.disabled = false;
-      btn.textContent = defaultBtnText;
-    }
-
-    const slider = document.getElementById("budgetSlider");
-    const budgetVal = document.getElementById("budgetVal");
-    const budgetTag = document.getElementById("budgetTag");
-    const budgetHidden = document.getElementById("budgetHidden");
-
-    if (slider && budgetVal && budgetTag && budgetHidden) {
-      slider.value = 0;
-      budgetVal.textContent = "À discuter";
-      budgetTag.textContent =
-        document.documentElement.lang === "en"
-          ? "Not defined yet"
-          : "Pas encore défini";
-      budgetHidden.value = "À discuter";
-      slider.style.setProperty("--pct", "0%");
-    }
-
-    if (window.history.replaceState) {
-      window.history.replaceState(
-        {},
-        document.title,
-        window.location.pathname + "#contact",
-      );
-    }
-  }
 })();

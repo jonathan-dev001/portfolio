@@ -439,8 +439,8 @@
               <strong
                 data-fr="Je développe des sites et des applications web solides et faciles à utiliser."
                 data-en="I build solid and easy-to-use websites and web applications."
-                >Je développe des sites et des applications web solides
-                et faciles à utiliser.</strong
+                >Je développe des sites et des applications web solides et
+                faciles à utiliser.</strong
               >
               <span
                 data-fr=" Mon objectif n'est pas seulement que le produit fonctionne techniquement, mais qu'il soit clair pour les utilisateurs et utile pour l'entreprise. J'aime transformer un besoin concret en quelque chose de propre, structuré et maintenable dans le temps."
@@ -746,8 +746,8 @@
                   ><span
                     data-fr="Backend : .NET, Spring Boot, Java EE, SQL — API solides et bien structurées."
                     data-en="Backend: .NET, Spring Boot, Java EE, SQL — solid and well-structured APIs."
-                    >Backend : .NET, Spring Boot, Java EE, SQL — API solides et bien
-                    structurées.</span
+                    >Backend : .NET, Spring Boot, Java EE, SQL — API solides et
+                    bien structurées.</span
                   >
                 </div>
                 <div class="bullet">
@@ -1355,7 +1355,7 @@
             <h2 class="contact-headline">
               <span data-fr="PARLONS" data-en="LET'S TALK">PARLONS</span>
               <span class="cl-fade" data-fr="VOTRE PROJET" data-en="ABOUT YOUR"
-                >DE VOTRE PROJET</span
+                >VOTRE PROJET</span
               >
               <span class="cl-gold" data-fr="ENSEMBLE." data-en="PROJECT."
                 >ENSEMBLE.</span
@@ -1371,6 +1371,7 @@
             </p>
 
             <div class="contact-card-wrap">
+              <!-- Cercles décoratifs -->
               <div class="cf-circles" aria-hidden="true">
                 <div class="cf-c"></div>
                 <div class="cf-c"></div>
@@ -1379,28 +1380,28 @@
 
               <div class="contact-card-box">
                 <div class="contact-card-inner">
+                  <!-- Formulaire -->
                   <form
                     class="cform"
                     id="contactForm"
+                    action="#"
+                    id="fsForm"
                     method="POST"
-                    action="https://formsubmit.co/63dcccd0f3415832761d8b3c6851b744"
                   >
-                    <input type="hidden" name="_captcha" value="false" />
-                    <input type="hidden" name="_template" value="table" />
                     <input
                       type="hidden"
-                      name="_subject"
+                      name="access_key"
+                      value="2654d967-d264-4b4d-ab67-04b543fb6a6e"
+                    />
+                    <input
+                      type="hidden"
+                      name="subject"
                       value="Nouveau message depuis le portfolio !"
                     />
                     <input
                       type="hidden"
-                      name="_next"
-                      value="https://jonathan-dev001.github.io/portfolio/?success=1#contact"
-                    />
-                    <input
-                      type="hidden"
-                      name="_autoresponse"
-                      value="Merci pour votre message ! Je vous répondrai dans les plus brefs délais."
+                      name="from_name"
+                      value="Portfolio JHC"
                     />
                     <input
                       type="hidden"
@@ -1408,8 +1409,13 @@
                       id="budgetHidden"
                       value="À discuter"
                     />
-                    <input type="text" name="_honey" style="display: none" />
+                    <input
+                      type="checkbox"
+                      name="botcheck"
+                      style="display: none"
+                    />
 
+                    <!-- Prénom + Nom -->
                     <div class="cf-group">
                       <label
                         class="cf-label"
@@ -1457,6 +1463,7 @@
                       >
                     </div>
 
+                    <!-- Courriel -->
                     <div class="cf-group full">
                       <label
                         class="cf-label"
@@ -1481,6 +1488,7 @@
                       >
                     </div>
 
+                    <!-- Téléphone + Entreprise -->
                     <div class="cf-group">
                       <label
                         class="cf-label"
@@ -1514,6 +1522,7 @@
                       />
                     </div>
 
+                    <!-- Type de projet (select) -->
                     <div class="cf-group full">
                       <label
                         class="cf-label"
@@ -1575,6 +1584,7 @@
                       </select>
                     </div>
 
+                    <!-- Slider budget -->
                     <div class="cf-group full">
                       <div class="budget-display">
                         <label
@@ -1615,6 +1625,7 @@
                       </div>
                     </div>
 
+                    <!-- Message -->
                     <div class="cf-group full">
                       <label
                         class="cf-label"
@@ -1649,11 +1660,12 @@
                     </button>
 
                     <div class="cf-success" id="formSuccess">
+                      ✅
                       <span
-                        data-fr="Message envoyé ! Je vous réponds dans les 24 à 72h."
-                        data-en="Message sent! I'll reply within 24 to 72 hours."
+                        data-fr="Message envoyé ! Je vous réponds dans les 24 à 48h."
+                        data-en="Message sent! I'll reply within 24 to 48 hours."
                         >Message envoyé ! Je vous réponds dans les 24 à
-                        72h.</span
+                        48h.</span
                       >
                     </div>
                   </form>
