@@ -64,7 +64,7 @@
     });
   }
 
-  const form = document.getElementById("fsForm");
+  const form = document.getElementById("contactForm");
   if (form) {
     form.action = "https://api.web3forms.com/submit";
   }

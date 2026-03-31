@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
     <meta
       http-equiv="Referrer-Policy"
       content="strict-origin-when-cross-origin"
@@ -15,8 +14,8 @@
     />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://api.web3forms.com; form-action 'self' https://api.web3forms.com; frame-ancestors 'none';"
-    /> 
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self' https://api.web3forms.com; form-action 'self' https://api.web3forms.com; base-uri 'self';"
+    />
     <meta
       name="description"
       content="Jonathan Hervé, développeur full-stack à Montréal. Création de sites web vitrine, applications web Angular/Spring Boot et apps Android. Disponible en freelance et pour des postes développeur."
@@ -1381,13 +1380,7 @@
               <div class="contact-card-box">
                 <div class="contact-card-inner">
                   <!-- Formulaire -->
-                  <form
-                    class="cform"
-                    id="contactForm"
-                    action="#"
-                    id="fsForm"
-                    method="POST"
-                  >
+                  <form class="cform" id="contactForm" action="#" method="POST">
                     <input
                       type="hidden"
                       name="access_key"
