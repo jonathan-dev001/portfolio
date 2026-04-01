@@ -126,10 +126,11 @@ const ids = [
   "a-propos",
   "services",
   "projets",
-  "stack",
-  "temoignages",
+  "skills",
+  "processus",
   "contact",
 ];
+
 links.forEach((a) =>
   a.addEventListener("click", (e) => {
     e.preventDefault();
